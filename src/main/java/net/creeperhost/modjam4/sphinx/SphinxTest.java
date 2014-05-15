@@ -15,19 +15,11 @@ public class SphinxTest {
         voce.SpeechInterface.init("../lib", false, true,
                 "../grammar", "digits");
 
-        System.out.println("This is a speech recognition test. "
-                + "Speak digits from 0-9 into the microphone. "
-                + "Speak 'quit' to quit.");
-
-        boolean quit = false;
-
-      // loop the recognition until the programm exits.
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
+                //Loop until Minecraft exits.
                 while (true) {
-                    // Normally, applications would do application-specific things
-                    // here.  For this sample, we'll just sleep for a little bit.
                     try
                     {
                         Thread.sleep(200);
@@ -38,11 +30,20 @@ public class SphinxTest {
 
                     while (voce.SpeechInterface.getRecognizerQueueSize() > 0)
                     {
+                        //Grab what has been said and return a string
                         String s = voce.SpeechInterface.popRecognizedString();
-
-
-                        System.out.println("You said: " + s);
-                        //voce.SpeechInterface.synthesize(s);
+                        //Let's ignore it if it's shorter than either of our initiators.
+                        if(s.length() < 5) continue;
+                        //Grab basic movement initiator and send command onto correct function.
+                        if(s.substring(0,5).equals("steve")) {
+                            coreControls(s);
+                            continue;
+                        }
+                        //Advanced commands outside base requirements, useable only with glasses
+                        if(((s.length() >= 7) && s.substring(0,7).equals("heroine")) || ((s.length() >= 9) && s.substring(0,9).equals("hero brine"))){
+                            additionalControls(s);
+                            continue;
+                        }
                     }
                 }
             }
@@ -51,5 +52,15 @@ public class SphinxTest {
 
         new Thread(runnable).start();
 
+    }
+    public static void coreControls(String command)
+    {
+        System.out.println("Core movement: " + command);
+        //Movement and game controls
+    }
+    public static void additionalControls(String command)
+    {
+        System.out.println("Additional functions: " + command);
+        //Jarvis like functions
     }
 }

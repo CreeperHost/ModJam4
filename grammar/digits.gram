@@ -6,6 +6,11 @@
 
 grammar digits;
 
-public <walkDir> = walk (forwards | backwards | left | right);
-public <walkDirNum> = <walkDir>;
-public <options> = open the menu;
+public <voicecommand> = steve;
+public <walkDir> = <voicecommand> walk (forward | forwards | backward | backwards | left | right);
+public <options> = <voicecommand> open the menu;
+public <tools> = <voicecommand> tool (one | two | three | four | five | six | seven | eight | nine);
+public <stop> = <voicecommand> stop (walking | mining);
+
+public <additionalcommand> = hero brine | heroine;
+public <weather> = <additionalcommand> what is the weather [like] [today | now];
