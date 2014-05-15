@@ -1,1 +1,1 @@
-Test hook commit.
+Test hook commit. And another.
