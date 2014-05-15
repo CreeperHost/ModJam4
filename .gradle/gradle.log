@@ -5,44 +5,7 @@
  R4wk, ZeuX, IngisKahn      
  MCP Data version : unknown
 ****************************
-Download http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.2-10.12.1.1060/forge-1.7.2-10.12.1.1060-userdev.jar
-:extractUserDev
-:getAssetsIndex
-:getAssets
-:copyAssets
-:extractNatives
-:genSrgs
-:downloadMcpTools
-:downloadClient
-:downloadServer
-:mergeJars
-Adding cpw/mods/fml/relauncher/SideOnly.class
-Adding cpw/mods/fml/relauncher/Side.class
-:deobfuscateJar
-Applying SpecialSource...
-INFO: merging AccessMap net/minecraft/item/ItemBlock/field_150939_a from AccessChange(clear=0, set=0, vis=1) with AccessChange(clear=0, set=0, vis=1)
-Applying Exceptor...
-:decompile
-:processSources
-Injecting fml files
-Applying fml patches
-Applying forge patches
-:remapJar
-:extractMinecraftSrc
-:recompMinecraftwarning: [options] bootstrap class path not set in conjunction with -source 1.6
-Note: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-Note: Some input files use unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
-1 warning
-
-:repackMinecraft
-:setupDecompWorkspace
-:ideaModule
-:ideaProject
-:ideaWorkspace
-:idea
 
 BUILD SUCCESSFUL
 
-Total time: 3 mins 33.236 secs
+Total time: 11.823 secs
