@@ -5,8 +5,28 @@
  R4wk, ZeuX, IngisKahn      
  MCP Data version : unknown
 ****************************
-:genIntellijRuns
+:extractUserDev SKIPPED
+:getAssetsIndex
+:getAssets
+:copyAssets
+:extractNatives
+:genSrgs SKIPPED
+:downloadMcpTools UP-TO-DATE
+:downloadClient SKIPPED
+:downloadServer SKIPPED
+:mergeJars SKIPPED
+:deobfuscateJar SKIPPED
+:decompile SKIPPED
+:processSources
+Injecting fml files
+Applying fml patches
+Applying forge patches
+:remapJar SKIPPED
+:extractMinecraftSrc SKIPPED
+:recompMinecraft SKIPPED
+:repackMinecraft SKIPPED
+:setupDecompWorkspace
 
 BUILD SUCCESSFUL
 
-Total time: 5.363 secs
+Total time: 15.794 secs
