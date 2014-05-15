@@ -41,6 +41,7 @@ public class SphinxTest {
             public void run() {
                 while (true) {
                     if(!firststart) liverecog.startRecognition(false);
+                    SpeechResult result = liverecog.getResult();
                     processResult(result);
                     liverecog.stopRecognition();
                     firststart=false;
