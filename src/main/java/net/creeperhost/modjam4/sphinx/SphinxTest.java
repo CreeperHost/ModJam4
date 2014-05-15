@@ -15,7 +15,7 @@ public class SphinxTest {
     public static void test()
     {
         ConfigurationManager cm = new ConfigurationManager (SphinxTest.class.getResource(configLoc));
-        Recognizer recognizer = (Recognizer) cm.lookup ("recognizer");
+        final Recognizer recognizer = (Recognizer) cm.lookup ("recognizer");
         recognizer.allocate ();
 
         Microphone microphone = (Microphone) cm.lookup("microphone");
@@ -29,18 +29,29 @@ public class SphinxTest {
         System.out.println("Say: (Good morning | Hello) ( Bhiksha | Evandro | Paul | Philip | Rita | Will )");
 
         // loop the recognition until the programm exits.
-        while (true) {
-            System.out.println("Start speaking. Press Ctrl-C to quit.\n");
 
-            Result result = recognizer.recognize();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    System.out.println("Start speaking. Press Ctrl-C to quit.\n");
 
-            if (result != null) {
-                String resultText = result.getBestFinalResultNoFiller();
-                System.out.println("You said: " + resultText + '\n');
-            } else {
-                System.out.println("I can't hear what you said.\n");
+                    Result result = recognizer.recognize();
+
+                    if (result != null) {
+                        String resultText = result.getBestFinalResultNoFiller();
+                        System.out.println("You said: " + resultText + '\n');
+                    } else {
+                        System.out.println("I can't hear what you said.\n");
+                    }
+                }
             }
-        }
+
+        };
+
+        new Thread(runnable).start();
+
+
 
     }
 
