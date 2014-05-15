@@ -21,11 +21,11 @@ public class SphinxTest {
         Configuration configuration = new Configuration();
 
         // Set path to acoustic model.
-        configuration.setAcousticModelPath("resource:/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz");
+        configuration.setAcousticModelPath("resource:/edu/cmu/sphinx/models/acoustic/wsj_8kHz");
         // Set path to dictionary.
-        configuration.setDictionaryPath("resource:/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/cmudict.0.6d");
+        configuration.setDictionaryPath("resource:/edu/cmu/sphinx/models/acoustic/wsj_8kHz/dict/cmudict.0.6d");
         // Set language model.
-        configuration.setLanguageModelPath("resource:/net/creeperhost/modjam4/sphinx/en-us.lm.dmp");
+        configuration.setLanguageModelPath("resource:/edu/cmu/sphinx/models/language/en-us.lm.dmp");
         try {
             liverecog = new LiveSpeechRecognizer(configuration);
         } catch (Exception e)
@@ -41,6 +41,7 @@ public class SphinxTest {
             public void run() {
                 while (true) {
                     if(!firststart) liverecog.startRecognition(false);
+                    SpeechResult result = liverecog.getResult();
                     processResult(result);
                     liverecog.stopRecognition();
                     firststart=false;
