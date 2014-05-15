@@ -5,28 +5,41 @@
  R4wk, ZeuX, IngisKahn      
  MCP Data version : unknown
 ****************************
-:extractUserDev SKIPPED
+Download http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.2-10.12.1.1060/forge-1.7.2-10.12.1.1060-userdev.jar
+:extractUserDev
 :getAssetsIndex
 :getAssets
 :copyAssets
 :extractNatives
-:genSrgs SKIPPED
-:downloadMcpTools UP-TO-DATE
-:downloadClient SKIPPED
-:downloadServer SKIPPED
-:mergeJars SKIPPED
-:deobfuscateJar SKIPPED
-:decompile SKIPPED
+:genSrgs
+:downloadMcpTools
+:downloadClient
+:downloadServer
+:mergeJars
+Adding cpw/mods/fml/relauncher/SideOnly.class
+Adding cpw/mods/fml/relauncher/Side.class
+:deobfuscateJar
+Applying SpecialSource...
+INFO: merging AccessMap net/minecraft/item/ItemBlock/field_150939_a from AccessChange(clear=0, set=0, vis=1) with AccessChange(clear=0, set=0, vis=1)
+Applying Exceptor...
+:decompile
 :processSources
 Injecting fml files
 Applying fml patches
 Applying forge patches
-:remapJar SKIPPED
-:extractMinecraftSrc SKIPPED
-:recompMinecraft SKIPPED
-:repackMinecraft SKIPPED
-:setupDecompWorkspace
+:remapJar
+:extractMinecraftSrc
+:recompMinecraft FAILED
 
-BUILD SUCCESSFUL
+FAILURE: Build failed with an exception.
 
-Total time: 15.794 secs
+* What went wrong:
+Execution failed for task ':recompMinecraft'.
+> Cannot find System Java Compiler. Ensure that you have installed a JDK (not just a JRE) and configured your JAVA_HOME system variable to point to the according directory.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED
+
+Total time: 3 mins 0.873 secs
