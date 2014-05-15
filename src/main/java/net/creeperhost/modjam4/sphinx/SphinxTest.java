@@ -26,6 +26,22 @@ public class SphinxTest {
             System.exit(1);
         }
 
+        System.out.println("Say: (Good morning | Hello) ( Bhiksha | Evandro | Paul | Philip | Rita | Will )");
+
+        // loop the recognition until the programm exits.
+        while (true) {
+            System.out.println("Start speaking. Press Ctrl-C to quit.\n");
+
+            Result result = recognizer.recognize();
+
+            if (result != null) {
+                String resultText = result.getBestFinalResultNoFiller();
+                System.out.println("You said: " + resultText + '\n');
+            } else {
+                System.out.println("I can't hear what you said.\n");
+            }
+        }
+
     }
 
 }
