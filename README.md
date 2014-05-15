@@ -1,10 +1,14 @@
 #ModJam4 by CreeperHost
+For Minecraft Forge 10.12.1.1060 and Minecraft 1.7.2
 
-##Features:
+##Features
 * Super awesome glasses.
 * IMP (In Mod Purchases), get your glasses for a one time payment of $999
 
-##Recipes:
+##Download
+[Latests build](http://www.creeperrepo.net/ci/ModJam4-CreeperHost/ModJam4-1.7.2-0.1.jar)
+
+##Recipes
 Glasses Sides
 <table>
     <tr>
