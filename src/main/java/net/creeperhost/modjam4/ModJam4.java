@@ -7,6 +7,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import net.creeperhost.modjam4.item.ModItems;
 import net.creeperhost.modjam4.reference.ModInfo;
+import net.creeperhost.modjam4.sphinx.SphinxTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -30,5 +31,6 @@ public class ModJam4 {
 	@SuppressWarnings("unused")
 	public void postinit(FMLPostInitializationEvent event) {
 		logger.info("Welcome to your mod!");
+        SphinxTest.test();
 	}
 }
