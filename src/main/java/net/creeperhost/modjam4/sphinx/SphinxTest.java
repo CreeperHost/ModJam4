@@ -25,7 +25,7 @@ public class SphinxTest {
         // Set path to dictionary.
         configuration.setDictionaryPath("resource:/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/cmudict.0.6d");
         // Set language model.
-        configuration.setLanguageModelPath("models/language/en-us.lm.dmp");
+        configuration.setLanguageModelPath("resource:/net/creeperhost/modjam4/sphinx/en-us.lm.dmp");
         try {
             liverecog = new LiveSpeechRecognizer(configuration);
         } catch (Exception e)
@@ -41,7 +41,6 @@ public class SphinxTest {
             public void run() {
                 while (true) {
                     if(!firststart) liverecog.startRecognition(false);
-                    SpeechResult result = liverecog.getResult();
                     processResult(result);
                     liverecog.stopRecognition();
                     firststart=false;
@@ -54,6 +53,7 @@ public class SphinxTest {
     }
     public static void processResult(SpeechResult output)
     {
+        System.out.println("We need to do something with output.getWords()");
         //Need to do something with output.getWords();
     }
 
