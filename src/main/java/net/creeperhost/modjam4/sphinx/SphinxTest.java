@@ -90,6 +90,9 @@ public class SphinxTest {
         if (command.contains("backward")) {
             keypress = KeyEvent.VK_S;
         }
+        if (command.contains("menu")) {
+            keypress = KeyEvent.VK_ESCAPE;
+        }
         if (command.contains("left")) {
             keypress = KeyEvent.VK_A;
         }
@@ -101,7 +104,7 @@ public class SphinxTest {
             try {
                 Robot simulator = new Robot();
                 simulator.mousePress(MouseEvent.BUTTON1_DOWN_MASK);
-                Thread.sleep(length/2);//Guessing it takes half the time to do a normal attack than it does to walk a block.
+                Thread.sleep(number*1000);//Amount of seconds to hold the left button
                 simulator.mouseRelease(MouseEvent.BUTTON1_DOWN_MASK);
                 simulator.keyRelease(keypress);
             } catch (Exception e) {
