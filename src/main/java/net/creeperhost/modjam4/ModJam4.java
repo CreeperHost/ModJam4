@@ -5,6 +5,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import net.creeperhost.modjam4.item.ModItems;
 import net.creeperhost.modjam4.reference.ModInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,7 +17,7 @@ public class ModJam4 {
     @EventHandler
     @SuppressWarnings("unused")
     public void preinit(FMLPreInitializationEvent event) {
-
+	    ModItems.init();
     }
 
 	@EventHandler
