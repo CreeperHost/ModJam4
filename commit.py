@@ -99,6 +99,6 @@ while True:
  
         if not conf['silent']:
             print "Push complete. Starting new 15 minutes timer."
-        counter = 2
+        counter = 14
  
     sleep(60)
