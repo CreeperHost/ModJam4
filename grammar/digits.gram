@@ -1,0 +1,11 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Digits Grammar file
+ */
+
+grammar digits;
+
+public <walkDir> = walk (forwards | backwards | left | right);
+public <walkDirNum> = <walkDir>;
+public <options> = open the menu;

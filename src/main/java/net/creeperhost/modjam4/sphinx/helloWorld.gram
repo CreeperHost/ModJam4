@@ -1,0 +1,7 @@
+#JSGF V1.0;
+
+grammar helloWorld;
+
+public <walkDir> = walk (forwards | backwards | left | right);
+public <walkDirNum> = <walkDir>;
+public <options> = open the menu;
