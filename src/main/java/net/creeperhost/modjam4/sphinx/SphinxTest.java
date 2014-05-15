@@ -14,7 +14,7 @@ public class SphinxTest {
 
     public static void test() {
 
-        voce.SpeechInterface.init("../lib", false, true,
+        voce.SpeechInterface.init("../libs", false, true,
                 "../grammar", "digits");
 
         Runnable runnable = new Runnable() {
