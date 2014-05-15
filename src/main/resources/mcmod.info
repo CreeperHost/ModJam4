@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "modjam4",
+  "name": "ModJam4",
+  "description": "The CreeperHost ModJam4 mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authors": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authors": ["Hanse00"],
+  "credits": "Searge for the awesome ModJam idea!",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
