@@ -7,10 +7,12 @@
 grammar digits;
 
 public <voicecommand> = steve;
-public <walkDir> = <voicecommand> walk (forward | forwards | backward | backwards | left | right);
+public <walkDir> = <voicecommand> walk (forward | forwards | backward | backwards | left | right) [(five | ten | fifteen | twenty | thirty | forty | fifty | sixty | seventy | eighty | ninety)];
+public <jumpDir> = <voicecommand> jump (forward | forwards | backward | backwards | left | right);
 public <options> = <voicecommand> open the menu;
-public <tools> = <voicecommand> tool (one | two | three | four | five | six | seven | eight | nine);
+public <tools> = <voicecommand> select (one | two | three | four | five | six | seven | eight | nine);
 public <stop> = <voicecommand> stop (walking | mining);
+public <attack> = <voicecommand> hit [(five | ten | fifteen)];
 
 public <additionalcommand> = hero brine | heroine;
 public <weather> = <additionalcommand> what is the weather [like] [today | now];
