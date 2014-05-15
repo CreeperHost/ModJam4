@@ -23,7 +23,7 @@ public class ModJam4 {
 	@EventHandler
 	@SuppressWarnings("unused")
     public void init(FMLInitializationEvent event) {
-
+		ModItems.registerRecipes();
     }
 
 	@EventHandler

@@ -7,8 +7,8 @@ import net.minecraft.item.Item;
 public class ItemGlassesNoseBridge extends Item {
 	public ItemGlassesNoseBridge() {
 		super();
-		setUnlocalizedName(ItemInfo.GLASSES_SIDE_NAME);
-		setTextureName(ItemInfo.GLASSES_SIDE_TEXTURE);
+		setUnlocalizedName(ItemInfo.GLASSES_NOSE_BRIDGE_NAME);
+		setTextureName(ItemInfo.GLASSES_NOSE_BRIDGE_TEXTURE);
 		setCreativeTab(CreativeTabs.tabRedstone);
 	}
 }

@@ -7,8 +7,8 @@ import net.minecraft.item.Item;
 public class ItemGlassesGlass extends Item {
 	public ItemGlassesGlass() {
 		super();
-		setUnlocalizedName(ItemInfo.GLASSES_SIDE_NAME);
-		setTextureName(ItemInfo.GLASSES_SIDE_TEXTURE);
+		setUnlocalizedName(ItemInfo.GLASSES_GLASS_NAME);
+		setTextureName(ItemInfo.GLASSES_GLASS_TEXTURE);
 		setCreativeTab(CreativeTabs.tabRedstone);
 	}
 }
