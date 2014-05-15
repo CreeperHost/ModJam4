@@ -1,9 +1,12 @@
 package net.creeperhost.modjam4.sphinx;
 
-import edu.cmu.sphinx.frontend.util.Microphone;
-import edu.cmu.sphinx.recognizer.Recognizer;
-import edu.cmu.sphinx.result.Result;
-import edu.cmu.sphinx.util.props.ConfigurationManager;
+import edu.cmu.sphinx.api.LiveSpeechRecognizer;
+//import edu.cmu.sphinx.frontend.util.Microphone;
+//import edu.cmu.sphinx.recognizer.Recognizer;
+//import edu.cmu.sphinx.result.Result;
+//import edu.cmu.sphinx.util.props.ConfigurationManager;
+import edu.cmu.sphinx.api.Configuration;
+import edu.cmu.sphinx.api.SpeechResult;
 
 /**
  * Created by Minion 2 on 15/05/2014.
@@ -11,48 +14,47 @@ import edu.cmu.sphinx.util.props.ConfigurationManager;
 public class SphinxTest {
 
     public static String configLoc = "sphinx.config.xml";
-
+    public static LiveSpeechRecognizer liverecog = null;
+    public static boolean firststart = true;
     public static void test()
     {
-        ConfigurationManager cm = new ConfigurationManager (SphinxTest.class.getResource(configLoc));
-        final Recognizer recognizer = (Recognizer) cm.lookup ("recognizer");
-        recognizer.allocate ();
+        Configuration configuration = new Configuration();
 
-        Microphone microphone = (Microphone) cm.lookup("microphone");
-
-        if (!microphone.startRecording()) {
-            System.out.println("Cannot start microphone.");
-            recognizer.deallocate();
-            System.exit(1);
+        // Set path to acoustic model.
+        configuration.setAcousticModelPath("resource:/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz");
+        // Set path to dictionary.
+        configuration.setDictionaryPath("resource:/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/cmudict.0.6d");
+        // Set language model.
+        configuration.setLanguageModelPath("models/language/en-us.lm.dmp");
+        try {
+            liverecog = new LiveSpeechRecognizer(configuration);
+        } catch (Exception e)
+        {
+            System.out.println(e.getMessage());
         }
-
-        System.out.println("Say: (Good morning | Hello) ( Bhiksha | Evandro | Paul | Philip | Rita | Will )");
-
-        // loop the recognition until the programm exits.
-
+        if(liverecog!=null) {
+            liverecog.startRecognition(true);
+        }
+      // loop the recognition until the programm exits.
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 while (true) {
-                    System.out.println("Start speaking. Press Ctrl-C to quit.\n");
-
-                    Result result = recognizer.recognize();
-
-                    if (result != null) {
-                        String resultText = result.getBestFinalResultNoFiller();
-                        System.out.println("You said: " + resultText + '\n');
-                    } else {
-                        System.out.println("I can't hear what you said.\n");
-                    }
+                    if(!firststart) liverecog.startRecognition(false);
+                    SpeechResult result = liverecog.getResult();
+                    processResult(result);
+                    liverecog.stopRecognition();
+                    firststart=false;
                 }
             }
 
         };
 
         new Thread(runnable).start();
-
-
-
+    }
+    public static void processResult(SpeechResult output)
+    {
+        //Need to do something with output.getWords();
     }
 
 }
