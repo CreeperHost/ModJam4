@@ -18,7 +18,7 @@ public class VoceInterface {
 
         try {
             new File("./config/voice/").mkdirs();
-            InputStream in = VoceInterface.class.getResourceAsStream("digits.gram");
+            InputStream in = VoceInterface.class.getResourceAsStream("/assets/modjam4/voice/digits.gram");
             OutputStream out = new FileOutputStream(new File("./config/Voice/digits.gram"));
             byte[] buffer = new byte[10768];
             int len;
@@ -30,9 +30,7 @@ public class VoceInterface {
             in.close();
             out.close();
 
-            System.out.println("Written File");
-
-            in = VoceInterface.class.getResourceAsStream("voce.config.xml");
+            in = VoceInterface.class.getResourceAsStream("/assets/modjam4/voice/voce.config.xml");
             out = new FileOutputStream(new File("./config/Voice/voce.config.xml"));
             buffer = new byte[10768];
 
