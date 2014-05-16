@@ -8,25 +8,30 @@ import java.awt.event.MouseEvent;
  * Created by Paul on 16/05/2014.
  */
 public class VoceProcessor extends Thread {
+    public static String _s = "";
     public VoceProcessor(String s)
     {
+        _s = s;//Collect the text version of voice input into a variable the thread can access safely.
+    }
+    public void run()
+    {
         //Grab basic movement initiator and send command onto correct function.
-        if (s.substring(0, 5).equals("steve")) {
-            coreControls(s);
+        if (_s.substring(0, 5).equals("steve")) {
+            coreControls(_s);
             return;
         }
         //Advanced commands outside base requirements, usable only with glasses
-        if (((s.length() >= 7) && s.substring(0, 7).equals("heroine")) || ((s.length() >= 9) && s.substring(0, 9).equals("hero brine"))) {
-            additionalControls(s);
+        if (((_s.length() >= 7) && _s.substring(0, 7).equals("heroine")) || ((_s.length() >= 9) && _s.substring(0, 9).equals("hero brine"))) {
+            additionalControls(_s);
             return;
         }
     }
     public static int keypress = 0;
-    public static void coreControls(String command)
+    public synchronized void coreControls(String command)
     {
         //Movement and game controls
         //Input emulation, need to fetch Minecraft key bindings and adjust as required
-        int length = 350;
+        int length = 350;//Need to calculate length of time holding a key to pass 1 block
         int number = 1;
         String[] data = command.split(" ");
         if(data[(data.length-1)].equals("one")) number = 1;
@@ -48,7 +53,6 @@ public class VoceProcessor extends Thread {
         if(data[(data.length-1)].equals("seventy")) number = 70;
         if(data[(data.length-1)].equals("eighty")) number = 80;
         if(data[(data.length-1)].equals("ninety")) number = 90;
-        length = length*number;
         if (command.contains("forward")) {
             keypress = KeyEvent.VK_W;
         }
@@ -102,9 +106,13 @@ public class VoceProcessor extends Thread {
         if(command.contains("walk")) {
             try {
                 Robot simulator = new Robot();
-                simulator.keyPress(keypress);
-                Thread.sleep(length);
-                simulator.keyRelease(keypress);
+                int wln = 0;
+                while((wln < number)&&(!isInterrupted())) {
+                    simulator.keyPress(keypress);
+                    Thread.sleep(length);
+                    simulator.keyRelease(keypress);
+                    wln++;
+                }
             } catch (Exception e) {
 
             }
@@ -132,7 +140,7 @@ public class VoceProcessor extends Thread {
             try {
                 Robot simulator = new Robot();
                 int jcnt=0;
-                while(jcnt < number) {
+                while((jcnt < number)&&(!isInterrupted())) {
                     simulator.keyPress(keypress);
                     Thread.sleep(length);
                     simulator.keyPress(KeyEvent.VK_SPACE);
@@ -147,7 +155,7 @@ public class VoceProcessor extends Thread {
             }
         }
     }
-    public static void additionalControls(String command)
+    public synchronized void additionalControls(String command)
     {
         if(command.length() <= 7 || !command.contains(" ")) return; //Enough of recognizing just 'heroine', kthxbai
         System.out.println("Additional functions: " + command);
