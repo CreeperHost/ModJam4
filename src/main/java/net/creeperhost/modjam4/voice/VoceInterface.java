@@ -10,6 +10,7 @@ import net.minecraft.util.MouseHelper;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.io.*;
 import java.util.List;
 
 /**
@@ -20,19 +21,54 @@ public class VoceInterface {
 
     public static void init() {
 
-        voce.SpeechInterface.init("./VoiceStuff", false, true,
-                "./VoiceStuff/grammar", "digits");
+        //Extract file from zip. We can actually use this same principle to download a file and write to disk, too!
+
+        try {
+            new File("./config/voice/").mkdirs();
+            InputStream in = VoceInterface.class.getResourceAsStream("digits.gram");
+            OutputStream out = new FileOutputStream(new File("./config/Voice/digits.gram"));
+            byte[] buffer = new byte[10768];
+            int len;
+
+            while ((len = in.read(buffer)) != -1) {
+                out.write(buffer, 0, len);
+            }
+
+            in.close();
+            out.close();
+
+            System.out.println("Written File");
+
+            in = VoceInterface.class.getResourceAsStream("voce.config.xml");
+            out = new FileOutputStream(new File("./config/Voice/voce.config.xml"));
+            buffer = new byte[10768];
+
+            while ((len = in.read(buffer)) != -1) {
+                out.write(buffer, 0, len);
+            }
+
+            in.close();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        voce.SpeechInterface.init("./config/voice", false, true,
+                "./config/voice/", "digits");
+
+
 
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 //Loop until Minecraft exits.
 
+
                 while (true) {
                     try {
                         Thread.sleep(200);
                     } catch (InterruptedException e) {
-                        
+
                     }
                     if(commandprocessor != null) commandprocessor.getName();
                     while (voce.SpeechInterface.getRecognizerQueueSize() > 0) {

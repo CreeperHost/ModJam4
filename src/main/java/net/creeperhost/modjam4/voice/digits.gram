@@ -1,0 +1,21 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Digits Grammar file
+ */
+
+grammar digits;
+
+<voicecommand> = steve;
+public <walkDir> = <voicecommand> [start] (walk | walking) [(forward | forwards | backward | backwards | left | right)] [(one | a (bit | little | some))];
+public <jumpDir> = <voicecommand> jump;
+public <menu> = <voicecommand> (open | close) [the] menu;
+public <tools> = <voicecommand> select (one | two | three | four | five | six | seven | eight | nine);
+public <stop> = <voicecommand> stop [it | everything];
+public <mine> = <voicecommand> mine [(five | ten | fifteen)];
+public <use> = <voicecommand> use;
+<turn> = <voicecommand> turn;
+public <turnDir> = <turn> (left | right | round);
+
+<additionalcommand> = hero brine | heroine;
+public <weather> = <additionalcommand> what is the weather [like] [today | now];
