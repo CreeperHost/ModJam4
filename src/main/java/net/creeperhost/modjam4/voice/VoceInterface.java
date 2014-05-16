@@ -30,17 +30,25 @@ public class VoceInterface {
                         //Grab what has been said and return a string
                         String s = voce.SpeechInterface.popRecognizedString();
                         //Let's ignore it if it's shorter than any of our initiation strings (Steve and Herobrine).
-                        System.out.println(s);
                         if (s.length() < 5) continue;
                         //Command long enough, let's check if the command is the stop command
 
                         if((commandprocessor != null) && (commandprocessor.isAlive()) && (s.substring(0, 5).equals("steve") && s.contains("stop")))
                         {
-                            System.out.println(s);
                             //Let's stop everything we're doing
                             commandprocessor.interrupt();
-                            //commandprocessor.stop();//Would love to use interrupt but need to rework how movement works in VoceProcessor.
                         } else {
+                            //Lets migrate jump to make it work while your walking!
+                            if(s.contains("jump")) {
+                                try {
+                                    Robot simulator = new Robot();
+                                    simulator.keyPress(KeyEvent.VK_SPACE);
+                                    Thread.sleep(200);
+                                    simulator.keyRelease(KeyEvent.VK_SPACE);
+                                } catch (Exception e) {
+
+                                }
+                            }
                             if(commandprocessor != null && commandprocessor.isAlive()) continue; //We probably shouldn't try and create a new VoceProcesor if the previous one is still running...
                             //Spawn us a thread to handle the actual processing so we can continue to monitor here for 'stop'
                             commandprocessor = new VoceProcessor(s);
@@ -52,7 +60,5 @@ public class VoceInterface {
 
         };
         new Thread(runnable).start();
-
     }
-
 }

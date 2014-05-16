@@ -3,12 +3,20 @@ package net.creeperhost.modjam4.voice;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Paul on 16/05/2014.
  */
 public class VoceProcessor extends Thread {
     public static String _s = "";
+    public static byte forward = KeyEvent.VK_W;
+    public static byte left = KeyEvent.VK_A;
+    public static byte right = KeyEvent.VK_D;
+    public static byte backward = KeyEvent.VK_S;
+    public static byte jump = KeyEvent.VK_SPACE;
+    public static byte menu = KeyEvent.VK_ESCAPE;
     public VoceProcessor(String s)
     {
         _s = s;//Collect the text version of voice input into a variable the thread can access safely.
@@ -33,46 +41,60 @@ public class VoceProcessor extends Thread {
         }
     }
     public static int keypress = 0;
+    public static int number_spoken_to_int(String number)
+    {
+        Map<String, Integer> tmp = new HashMap<String, Integer>();
+        tmp.put("one", 1);
+        tmp.put("two", 2);
+        tmp.put("three", 3);
+        tmp.put("four", 4);
+        tmp.put("five", 5);
+        tmp.put("six", 6);
+        tmp.put("seven", 7);
+        tmp.put("eight", 8);
+        tmp.put("nine", 9);
+        tmp.put("ten", 10);
+        tmp.put("eleven", 11);
+        tmp.put("twelve", 12);
+        tmp.put("thirteen", 13);
+        tmp.put("fourteen", 14);
+        tmp.put("fifteen", 15);
+        tmp.put("sixteen", 16);
+        tmp.put("seventeen", 17);
+        tmp.put("eighteen", 18);
+        tmp.put("nineteen", 19);
+        tmp.put("twenty", 20);
+        tmp.put("thirty", 30);
+        tmp.put("forty", 40);
+        tmp.put("fifty", 50);
+        tmp.put("sixty", 60);
+        tmp.put("seventy", 70);
+        tmp.put("eighty", 80);
+        tmp.put("ninety", 90);
+        return tmp.containsKey(number) ? tmp.get(number) : 0;
+    }
     public synchronized void coreControls(String command) throws AWTException
     {
         //Movement and game controls
         //Input emulation, need to fetch Minecraft key bindings and adjust as required
         int length = 350;//Need to calculate length of time holding a key to pass 1 block
-        int number = 1;
+        int number = 0;
         String[] data = command.split(" ");
-        if(data[(data.length-1)].equals("one")) number = 1;
-        if(data[(data.length-1)].equals("two")) number = 2;
-        if(data[(data.length-1)].equals("three")) number = 3;
-        if(data[(data.length-1)].equals("four")) number = 4;
-        if(data[(data.length-1)].equals("five")) number = 5;
-        if(data[(data.length-1)].equals("six")) number = 6;
-        if(data[(data.length-1)].equals("seven")) number = 7;
-        if(data[(data.length-1)].equals("eight")) number = 8;
-        if(data[(data.length-1)].equals("nine")) number = 9;
-        if(data[(data.length-1)].equals("ten")) number = 10;
-        if(data[(data.length-1)].equals("fifteen")) number = 15;
-        if(data[(data.length-1)].equals("twenty")) number = 20;
-        if(data[(data.length-1)].equals("thirty")) number = 30;
-        if(data[(data.length-1)].equals("forty")) number = 40;
-        if(data[(data.length-1)].equals("fifty")) number = 50;
-        if(data[(data.length-1)].equals("sixty")) number = 60;
-        if(data[(data.length-1)].equals("seventy")) number = 70;
-        if(data[(data.length-1)].equals("eighty")) number = 80;
-        if(data[(data.length-1)].equals("ninety")) number = 90;
+        number = number_spoken_to_int(data[(data.length-1)]);
         if (command.contains("forward")) {
-            keypress = KeyEvent.VK_W;
+            keypress = forward;
         }
         if (command.contains("backward")) {
-            keypress = KeyEvent.VK_S;
+            keypress = backward;
         }
         if (command.contains("menu")) {
-            keypress = KeyEvent.VK_ESCAPE;
+            keypress = menu;
         }
         if (command.contains("left")) {
-            keypress = KeyEvent.VK_A;
+            keypress = left;
         }
         if (command.contains("right")) {
-            keypress = KeyEvent.VK_D;
+            keypress = right;
         }
         if(command.contains("hit"))
         {
@@ -101,24 +123,29 @@ public class VoceProcessor extends Thread {
         if(command.contains("menu")) {
             Robot simulator = new Robot();
             try {
-                simulator.keyPress(KeyEvent.VK_ESCAPE);
+                simulator.keyPress(menu);
                 Thread.sleep(20);
-                simulator.keyRelease(KeyEvent.VK_ESCAPE);
+                simulator.keyRelease(menu);
             } catch (Exception e) {
 
             } finally {
-                simulator.keyRelease(KeyEvent.VK_ESCAPE);
+                simulator.keyRelease(menu);
             }
         }
         if(command.contains("walk")) {
             Robot simulator = new Robot();
             try {
                 int wln = 0;
-                while((wln < number)&&(!isInterrupted())) {
+                if(number >= 1) { // If you've asked for "a little" or "a bit" or "one"
                     simulator.keyPress(keypress);
-                    Thread.sleep(length);
+                    Thread.sleep(length*(number*2));
                     simulator.keyRelease(keypress);
-                    wln++;
+                } else {
+                    while (!isInterrupted()) {//The normal loop for walking
+                        simulator.keyPress(keypress);
+                        Thread.sleep(length);
+                        simulator.keyRelease(keypress);
+                    }
                 }
             } catch (Exception e) {
 
@@ -145,27 +172,6 @@ public class VoceProcessor extends Thread {
 
             } finally {
                 simulator.keyRelease(keypress);
-            }
-        }
-        if(command.contains("jump")) {
-            Robot simulator = new Robot();
-            try {
-                int jcnt=0;
-                while((jcnt < number)&&(!isInterrupted())) {
-                    simulator.keyPress(keypress);
-                    Thread.sleep(length);
-                    simulator.keyPress(KeyEvent.VK_SPACE);
-                    Thread.sleep(length);
-                    simulator.keyRelease(KeyEvent.VK_SPACE);
-                    Thread.sleep(length);
-                    simulator.keyRelease(keypress);
-                    jcnt++;
-                }
-            } catch (Exception e) {
-
-            } finally {
-                simulator.keyRelease(keypress);
-                simulator.keyRelease(KeyEvent.VK_SPACE);
             }
         }
     }
