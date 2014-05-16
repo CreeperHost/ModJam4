@@ -103,15 +103,16 @@ public class VoceProcessor extends Thread {
         {
             try {
                 KeyBinding.setKeyBindState(mc.gameSettings.keyBindAttack.getKeyCode(), true);
+                KeyBinding.onTick(mc.gameSettings.keyBindAttack.getKeyCode());
                 Thread.sleep(number*1000);//Amount of seconds to hold the left button
             } catch (Exception e) {
 
             } finally {
                 KeyBinding.setKeyBindState(mc.gameSettings.keyBindAttack.getKeyCode(), false);
+                KeyBinding.onTick(mc.gameSettings.keyBindAttack.getKeyCode());
             }
         }
         else if(command.contains("use")) {
-            Robot simulator = new Robot();
             try {
 
                 KeyBinding.setKeyBindState(mc.gameSettings.keyBindUseItem.getKeyCode(), true);
