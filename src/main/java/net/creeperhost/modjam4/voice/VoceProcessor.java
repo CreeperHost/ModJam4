@@ -171,7 +171,7 @@ public class VoceProcessor extends Thread {
 
         }
     }
-    
+
     public synchronized void additionalControls(String command)
     {
         if(command.length() <= 7 || !command.contains(" ")) return; //Enough of recognizing just 'heroine', kthxbai

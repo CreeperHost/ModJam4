@@ -20,20 +20,19 @@ public class VoceInterface {
 
     public static void init() {
 
-        voce.SpeechInterface.init("../libs", false, true,
-                "../grammar", "digits");
+        voce.SpeechInterface.init("./VoiceStuff", false, true,
+                "./VoiceStuff/grammar", "digits");
 
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 //Loop until Minecraft exits.
 
-
-
                 while (true) {
                     try {
                         Thread.sleep(200);
                     } catch (InterruptedException e) {
+                        
                     }
                     if(commandprocessor != null) commandprocessor.getName();
                     while (voce.SpeechInterface.getRecognizerQueueSize() > 0) {
@@ -65,7 +64,13 @@ public class VoceInterface {
                                     int time = 0;
 
                                     int changeAmount;
-                                    if (s.contains("left")) changeAmount = -600; else if (s.contains("right")) changeAmount = 600; else changeAmount = 1200;
+                                    if (s.contains("left")) {
+                                        changeAmount = -600;
+                                    } else if (s.contains("right")) {
+                                        changeAmount = 600;
+                                    } else {
+                                        changeAmount = 1200;
+                                    }
 
                                     int changeAmountIncremental = changeAmount / (turnTime / 50);
 
