@@ -18,7 +18,13 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'forge'
 
-version = "1.7.2-0.5"
+mcversion = "1.7.2"
+modversion = "0.5"
+buildnumber = System.getenv().BUILD_NUMBER ?: "UNKNOWN"
+version = mcversion + "-" + modversion + "-" + buildnumber
+
+
+
 group= "net.creeperhost.modjam4" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ModJam4"
 
@@ -51,10 +57,6 @@ processResources
 
 dependencies {
 		compile files('libs/cmu_us_kal.jar','libs/cmulex.jar','libs/en_us.jar','libs/freetts.jar','libs/jsapi.jar','libs/sphinx4.jar','libs/voce.jar','libs/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar')
-}
-
-def smallJars(limit) {
-  configurations.compile.findAll {it.length() < limit}.collect { it.isDirectory() ? it : zipTree(it) }
 }
 
 def locateJar(lib) {
