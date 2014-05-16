@@ -17,7 +17,13 @@ public class VoceProcessor extends Thread {
     {
         //Grab basic movement initiator and send command onto correct function.
         if (_s.substring(0, 5).equals("steve")) {
-            coreControls(_s);
+            try {
+                coreControls(_s);
+            }
+            catch (AWTException e)
+            {
+
+            }
             return;
         }
         //Advanced commands outside base requirements, usable only with glasses
@@ -27,7 +33,7 @@ public class VoceProcessor extends Thread {
         }
     }
     public static int keypress = 0;
-    public synchronized void coreControls(String command)
+    public synchronized void coreControls(String command) throws AWTException
     {
         //Movement and game controls
         //Input emulation, need to fetch Minecraft key bindings and adjust as required
@@ -70,42 +76,43 @@ public class VoceProcessor extends Thread {
         }
         if(command.contains("hit"))
         {
+            Robot simulator = new Robot();
             try {
-                Robot simulator = new Robot();
                 simulator.mousePress(MouseEvent.BUTTON1_DOWN_MASK);
                 Thread.sleep(number*1000);//Amount of seconds to hold the left button
-                simulator.mouseRelease(MouseEvent.BUTTON1_DOWN_MASK);
-                simulator.keyRelease(keypress);
             } catch (Exception e) {
 
+            } finally {
+                simulator.mouseRelease(MouseEvent.BUTTON1_DOWN_MASK);
             }
         }
-        if(command.contains("use"))
-        {
+        if(command.contains("use")) {
+            Robot simulator = new Robot();
             try {
-                Robot simulator = new Robot();
+
                 simulator.mousePress(MouseEvent.BUTTON2_DOWN_MASK);
                 Thread.sleep(number*1000);//Amount of seconds to hold the left button
-                simulator.mouseRelease(MouseEvent.BUTTON2_DOWN_MASK);
-                simulator.keyRelease(keypress);
             } catch (Exception e) {
 
+            } finally {
+                simulator.mouseRelease(MouseEvent.BUTTON2_DOWN_MASK);
             }
         }
-        if(command.contains("menu"))
-        {
+        if(command.contains("menu")) {
+            Robot simulator = new Robot();
             try {
-                Robot simulator = new Robot();
                 simulator.keyPress(KeyEvent.VK_ESCAPE);
                 Thread.sleep(20);
                 simulator.keyRelease(KeyEvent.VK_ESCAPE);
             } catch (Exception e) {
 
+            } finally {
+                simulator.keyRelease(KeyEvent.VK_ESCAPE);
             }
         }
         if(command.contains("walk")) {
+            Robot simulator = new Robot();
             try {
-                Robot simulator = new Robot();
                 int wln = 0;
                 while((wln < number)&&(!isInterrupted())) {
                     simulator.keyPress(keypress);
@@ -115,9 +122,12 @@ public class VoceProcessor extends Thread {
                 }
             } catch (Exception e) {
 
+            } finally {
+                simulator.keyRelease(keypress);
             }
         }
         if(command.contains("select")) {
+            Robot simulator = new Robot();
             try {
                 if(number == 1) keypress = KeyEvent.VK_1;
                 if(number == 2) keypress = KeyEvent.VK_2;
@@ -128,17 +138,18 @@ public class VoceProcessor extends Thread {
                 if(number == 7) keypress = KeyEvent.VK_7;
                 if(number == 8) keypress = KeyEvent.VK_8;
                 if(number == 9) keypress = KeyEvent.VK_9;
-                Robot simulator = new Robot();
                 simulator.keyPress(keypress);
                 Thread.sleep(10);
                 simulator.keyRelease(keypress);
             } catch (Exception e) {
 
+            } finally {
+                simulator.keyRelease(keypress);
             }
         }
         if(command.contains("jump")) {
+            Robot simulator = new Robot();
             try {
-                Robot simulator = new Robot();
                 int jcnt=0;
                 while((jcnt < number)&&(!isInterrupted())) {
                     simulator.keyPress(keypress);
@@ -152,6 +163,9 @@ public class VoceProcessor extends Thread {
                 }
             } catch (Exception e) {
 
+            } finally {
+                simulator.keyRelease(keypress);
+                simulator.keyRelease(KeyEvent.VK_SPACE);
             }
         }
     }
