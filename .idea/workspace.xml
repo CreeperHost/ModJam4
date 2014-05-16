@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d6c5fca-0573-4741-943d-6a24d856f0f1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java" afterPath="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ModJam4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,21 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VoceInterface.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="VoceInterface.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="2091">
-              <caret line="109" column="52" selection-start-line="109" selection-start-column="52" selection-end-line="109" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.41278064" vertical-offset="492" max-vertical-offset="1088">
+              <caret line="52" column="125" selection-start-line="52" selection-start-column="125" selection-end-line="52" selection-end-column="125" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VoceProcessor.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="VoceProcessor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.3883848" vertical-offset="1455" max-vertical-offset="3077">
-              <caret line="171" column="95" selection-start-line="171" selection-start-column="95" selection-end-line="171" selection-end-column="95" />
+            <state vertical-scroll-proportion="-5.107143" vertical-offset="1455" max-vertical-offset="3077">
+              <caret line="102" column="9" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -611,8 +609,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/sphinx/SphinxTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java" />
       </list>
     </option>
   </component>
@@ -1231,14 +1229,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1359" max-vertical-offset="2091">
-          <caret line="109" column="52" selection-start-line="109" selection-start-column="52" selection-end-line="109" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.1.1060/forgeSrc-1.7.2-10.12.1.1060-sources.jar!/net/minecraft/client/settings/GameSettings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="21879">
@@ -1267,8 +1257,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.3883848" vertical-offset="1455" max-vertical-offset="3077">
-          <caret line="171" column="95" selection-start-line="171" selection-start-column="95" selection-end-line="171" selection-end-column="95" />
+        <state vertical-scroll-proportion="-5.107143" vertical-offset="1455" max-vertical-offset="3077">
+          <caret line="102" column="9" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41278064" vertical-offset="492" max-vertical-offset="1088">
+          <caret line="52" column="125" selection-start-line="52" selection-start-column="125" selection-end-line="52" selection-end-column="125" />
           <folding />
         </state>
       </provider>
