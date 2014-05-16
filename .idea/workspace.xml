@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d6c5fca-0573-4741-943d-6a24d856f0f1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/ImposterKeyBinding.java" />
+      <change type="DELETED" beforePath="C:\Git\ModJam4\src\main\java\net\creeperhost\modjam4\voice\ImposterKeyBinding.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java" afterPath="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ModJam4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VoceInterface.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="VoceInterface.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
-              <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.46977547" vertical-offset="0" max-vertical-offset="1088">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,9 +50,12 @@
       <file leaf-file-name="VoceProcessor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.178572" vertical-offset="1438" max-vertical-offset="3094">
-              <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
-              <folding />
+            <state vertical-scroll-proportion="-24.285715" vertical-offset="1037" max-vertical-offset="3145">
+              <caret line="109" column="93" selection-start-line="109" selection-start-column="93" selection-end-line="109" selection-end-column="93" />
+              <folding>
+                <element signature="e#2252#2253#0" expanded="true" />
+                <element signature="e#2320#2321#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,21 +63,9 @@
       <file leaf-file-name="KeyBinding.java" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.1.1060/forgeSrc-1.7.2-10.12.1.1060-sources.jar!/net/minecraft/client/settings/KeyBinding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.25" vertical-offset="0" max-vertical-offset="2227">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+            <state vertical-scroll-proportion="-9.0" vertical-offset="207" max-vertical-offset="2227">
+              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImposterKeyBinding.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/ImposterKeyBinding.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4586331" vertical-offset="0" max-vertical-offset="556">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -81,7 +73,7 @@
       <file leaf-file-name="Minecraft.java" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.1.1060/forgeSrc-1.7.2-10.12.1.1060-sources.jar!/net/minecraft/client/Minecraft.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.964286" vertical-offset="29108" max-vertical-offset="45509">
+            <state vertical-scroll-proportion="-18.071428" vertical-offset="28853" max-vertical-offset="45509">
               <caret line="1745" column="37" selection-start-line="1745" selection-start-column="20" selection-end-line="1745" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -622,9 +614,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/sphinx/SphinxTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/ImposterKeyBinding.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java" />
       </list>
     </option>
   </component>
@@ -1042,7 +1034,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="3213">
           <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#2252#2253#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1105,32 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.1.1060/forgeSrc-1.7.2-10.12.1.1060-sources.jar!/net/minecraft/client/settings/GameSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="21879">
-          <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.1.1060/forgeSrc-1.7.2-10.12.1.1060-sources.jar!/net/minecraft/client/Minecraft.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.964286" vertical-offset="29108" max-vertical-offset="45509">
-          <caret line="1745" column="37" selection-start-line="1745" selection-start-column="20" selection-end-line="1745" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.1.1060/forgeSrc-1.7.2-10.12.1.1060-sources.jar!/net/minecraft/client/settings/KeyBinding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.25" vertical-offset="0" max-vertical-offset="2227">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/ModJam4.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
@@ -1139,29 +1108,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.1.1060/forgeSrc-1.7.2-10.12.1.1060-sources.jar!/net/minecraft/client/Minecraft.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
-          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+        <state vertical-scroll-proportion="-18.071428" vertical-offset="28853" max-vertical-offset="45509">
+          <caret line="1745" column="37" selection-start-line="1745" selection-start-column="20" selection-end-line="1745" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.1.1060/forgeSrc-1.7.2-10.12.1.1060-sources.jar!/net/minecraft/client/settings/GameSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="21879">
+          <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.7.2-10.12.1.1060/forgeSrc-1.7.2-10.12.1.1060-sources.jar!/net/minecraft/client/settings/KeyBinding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.0" vertical-offset="207" max-vertical-offset="2227">
+          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.178572" vertical-offset="1438" max-vertical-offset="3094">
-          <caret line="111" column="30" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
-          <folding />
+        <state vertical-scroll-proportion="-24.285715" vertical-offset="1037" max-vertical-offset="3145">
+          <caret line="109" column="93" selection-start-line="109" selection-start-column="93" selection-end-line="109" selection-end-column="93" />
+          <folding>
+            <element signature="e#2252#2253#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/ImposterKeyBinding.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/creeperhost/modjam4/voice/VoceInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4586331" vertical-offset="0" max-vertical-offset="556">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.46977547" vertical-offset="0" max-vertical-offset="1088">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

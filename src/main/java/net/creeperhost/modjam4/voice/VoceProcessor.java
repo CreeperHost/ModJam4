@@ -43,9 +43,10 @@ public class VoceProcessor extends Thread {
     public static KeyBinding keypress;
 
     public static Minecraft mc = Minecraft.getMinecraft();
-    public static int number_spoken_to_int(String number)
-    {
-        Map<String, Integer> tmp = new HashMap<String, Integer>();
+
+    static Map<String, Integer> tmp = new HashMap<String, Integer>();
+
+    static {
         tmp.put("one", 1);
         tmp.put("two", 2);
         tmp.put("three", 3);
@@ -73,7 +74,11 @@ public class VoceProcessor extends Thread {
         tmp.put("seventy", 70);
         tmp.put("eighty", 80);
         tmp.put("ninety", 90);
-        return tmp.containsKey(number) ? tmp.get(number) : 0;
+    }
+
+    public static int number_spoken_to_int(String number)
+    {
+        return tmp.containsKey(number) ? tmp.get(number) : 1;
     }
     public synchronized void coreControls(String command) throws AWTException
     {
@@ -103,13 +108,11 @@ public class VoceProcessor extends Thread {
         {
             try {
                 KeyBinding.setKeyBindState(mc.gameSettings.keyBindAttack.getKeyCode(), true);
-                KeyBinding.onTick(mc.gameSettings.keyBindAttack.getKeyCode());
                 Thread.sleep(number*1000);//Amount of seconds to hold the left button
             } catch (Exception e) {
 
             } finally {
                 KeyBinding.setKeyBindState(mc.gameSettings.keyBindAttack.getKeyCode(), false);
-                KeyBinding.onTick(mc.gameSettings.keyBindAttack.getKeyCode());
             }
         }
         else if(command.contains("use")) {
