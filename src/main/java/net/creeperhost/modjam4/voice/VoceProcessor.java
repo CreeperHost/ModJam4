@@ -2,11 +2,9 @@ package net.creeperhost.modjam4.voice;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
-import org.lwjgl.input.Keyboard;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +23,7 @@ public class VoceProcessor extends Thread {
     {
         //Grab basic movement initiator and send command onto correct function.
         if (_s.substring(0, 5).equals("steve")) {
+            //Catch ALL the exceptions!
             try {
                 coreControls(_s);
             }

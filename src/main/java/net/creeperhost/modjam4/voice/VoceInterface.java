@@ -2,16 +2,9 @@ package net.creeperhost.modjam4.voice;
 
 
 
-import cpw.mods.fml.common.ObfuscationReflectionHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.util.MouseHelper;
-
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 import java.io.*;
-import java.util.List;
 
 /**
  * Created by Minion 2 on 15/05/2014.
@@ -62,8 +55,6 @@ public class VoceInterface {
             @Override
             public void run() {
                 //Loop until Minecraft exits.
-
-
                 while (true) {
                     try {
                         Thread.sleep(200);
@@ -122,7 +113,6 @@ public class VoceInterface {
 
                                 }
                             }
-
                             if(commandprocessor != null && commandprocessor.isAlive()) continue; //We probably shouldn't try and create a new VoceProcesor if the previous one is still running...
                             //Spawn us a thread to handle the actual processing so we can continue to monitor here for 'stop'
                             commandprocessor = new VoceProcessor(s);
