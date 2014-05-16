@@ -78,7 +78,7 @@ public class VoceProcessor extends Thread {
 
     public static int number_spoken_to_int(String number)
     {
-        return tmp.containsKey(number) ? tmp.get(number) : 1;
+        return tmp.containsKey(number) ? tmp.get(number) : 0;
     }
     public synchronized void coreControls(String command) throws AWTException
     {
@@ -104,22 +104,15 @@ public class VoceProcessor extends Thread {
         else if (command.contains("right")) {
             keypress = mc.gameSettings.keyBindRight;
         }
-        else if(command.contains("hit"))
+        else if(command.contains("mine"))
         {
-            try {
-                KeyBinding.setKeyBindState(mc.gameSettings.keyBindAttack.getKeyCode(), true);
-                Thread.sleep(number*1000);//Amount of seconds to hold the left button
-            } catch (Exception e) {
-
-            } finally {
-                KeyBinding.setKeyBindState(mc.gameSettings.keyBindAttack.getKeyCode(), false);
-            }
+            keypress = mc.gameSettings.keyBindAttack;
         }
         else if(command.contains("use")) {
             try {
-
+                if (number == 0) number++;
                 KeyBinding.setKeyBindState(mc.gameSettings.keyBindUseItem.getKeyCode(), true);
-                Thread.sleep(number * 1000);//Amount of seconds to hold the left button
+                Thread.sleep(number * 50);//Amount of seconds to hold the left button
             } catch (Exception e) {
 
             } finally {
@@ -138,10 +131,11 @@ public class VoceProcessor extends Thread {
                 simulator.keyRelease(KeyEvent.VK_ESCAPE);
             }
         }
-        if(command.contains("walk")) {
-            Robot simulator = new Robot();
+
+        if(command.contains("walk") || command.contains("mine")) {
             try {
                 int wln = 0;
+
                 if(number >= 1) { // If you've asked for "a little" or "a bit" or "one"
                     KeyBinding.setKeyBindState(keypress.getKeyCode(), true);
                     Thread.sleep(length*(number*2));

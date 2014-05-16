@@ -12,7 +12,8 @@ public <jumpDir> = <voicecommand> jump;
 public <menu> = <voicecommand> (open | close) [the] menu;
 public <tools> = <voicecommand> select (one | two | three | four | five | six | seven | eight | nine);
 public <stop> = <voicecommand> stop [it | everything];
-public <attack> = <voicecommand> hit [(five | ten | fifteen)];
+public <mine> = <voicecommand> mine [(five | ten | fifteen)];
+public <use> = <voicecommand> use;
 
 <additionalcommand> = hero brine | heroine;
 public <weather> = <additionalcommand> what is the weather [like] [today | now];
