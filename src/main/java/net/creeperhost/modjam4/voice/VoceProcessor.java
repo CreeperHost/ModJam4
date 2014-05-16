@@ -1,5 +1,9 @@
 package net.creeperhost.modjam4.voice;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.settings.KeyBinding;
+import org.lwjgl.input.Keyboard;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -10,13 +14,9 @@ import java.util.Map;
  * Created by Paul on 16/05/2014.
  */
 public class VoceProcessor extends Thread {
+
     public static String _s = "";
-    public static byte forward = KeyEvent.VK_W;
-    public static byte left = KeyEvent.VK_A;
-    public static byte right = KeyEvent.VK_D;
-    public static byte backward = KeyEvent.VK_S;
-    public static byte jump = KeyEvent.VK_SPACE;
-    public static byte menu = KeyEvent.VK_ESCAPE;
+
     public VoceProcessor(String s)
     {
         _s = s;//Collect the text version of voice input into a variable the thread can access safely.
@@ -40,7 +40,9 @@ public class VoceProcessor extends Thread {
             return;
         }
     }
-    public static int keypress = 0;
+    public static KeyBinding keypress;
+
+    public static Minecraft mc = Minecraft.getMinecraft();
     public static int number_spoken_to_int(String number)
     {
         Map<String, Integer> tmp = new HashMap<String, Integer>();
@@ -81,55 +83,55 @@ public class VoceProcessor extends Thread {
         int number = 0;
         String[] data = command.split(" ");
         number = number_spoken_to_int(data[(data.length-1)]);
+
         if (command.contains("forward")) {
-            keypress = forward;
+            keypress = mc.gameSettings.keyBindForward;
         }
-        if (command.contains("backward")) {
-            keypress = backward;
+        else if (command.contains("backward")) {
+            keypress = mc.gameSettings.keyBindBack;
         }
-        if (command.contains("menu")) {
-            keypress = menu;
+        else if (command.contains("menu")) {
+            //keypress = menu;
         }
-        if (command.contains("left")) {
-            keypress = left;
+        else if (command.contains("left")) {
+            keypress = mc.gameSettings.keyBindLeft;
         }
-        if (command.contains("right")) {
-            keypress = right;
+        else if (command.contains("right")) {
+            keypress = mc.gameSettings.keyBindRight;
         }
-        if(command.contains("hit"))
+        else if(command.contains("hit"))
         {
-            Robot simulator = new Robot();
             try {
-                simulator.mousePress(MouseEvent.BUTTON1_DOWN_MASK);
+                KeyBinding.setKeyBindState(mc.gameSettings.keyBindAttack.getKeyCode(), true);
                 Thread.sleep(number*1000);//Amount of seconds to hold the left button
             } catch (Exception e) {
 
             } finally {
-                simulator.mouseRelease(MouseEvent.BUTTON1_DOWN_MASK);
+                KeyBinding.setKeyBindState(mc.gameSettings.keyBindAttack.getKeyCode(), false);
             }
         }
-        if(command.contains("use")) {
+        else if(command.contains("use")) {
             Robot simulator = new Robot();
             try {
 
-                simulator.mousePress(MouseEvent.BUTTON2_DOWN_MASK);
-                Thread.sleep(number*1000);//Amount of seconds to hold the left button
+                KeyBinding.setKeyBindState(mc.gameSettings.keyBindUseItem.getKeyCode(), true);
+                Thread.sleep(number * 1000);//Amount of seconds to hold the left button
             } catch (Exception e) {
 
             } finally {
-                simulator.mouseRelease(MouseEvent.BUTTON2_DOWN_MASK);
+                KeyBinding.setKeyBindState(mc.gameSettings.keyBindUseItem.getKeyCode(), false);
             }
         }
-        if(command.contains("menu")) {
+        else if(command.contains("menu")) {
             Robot simulator = new Robot();
             try {
-                simulator.keyPress(menu);
+                simulator.keyPress(KeyEvent.VK_ESCAPE);
                 Thread.sleep(20);
-                simulator.keyRelease(menu);
+                simulator.keyRelease(KeyEvent.VK_ESCAPE);
             } catch (Exception e) {
 
             } finally {
-                simulator.keyRelease(menu);
+                simulator.keyRelease(KeyEvent.VK_ESCAPE);
             }
         }
         if(command.contains("walk")) {
@@ -137,42 +139,38 @@ public class VoceProcessor extends Thread {
             try {
                 int wln = 0;
                 if(number >= 1) { // If you've asked for "a little" or "a bit" or "one"
-                    simulator.keyPress(keypress);
+                    KeyBinding.setKeyBindState(keypress.getKeyCode(), true);
                     Thread.sleep(length*(number*2));
-                    simulator.keyRelease(keypress);
+                    KeyBinding.setKeyBindState(keypress.getKeyCode(), false);
                 } else {
                     while (!isInterrupted()) {//The normal loop for walking
-                        simulator.keyPress(keypress);
+                        KeyBinding.setKeyBindState(keypress.getKeyCode(), true);
                         Thread.sleep(length);
-                        simulator.keyRelease(keypress);
+                        KeyBinding.setKeyBindState(keypress.getKeyCode(), false);
                     }
                 }
             } catch (Exception e) {
 
             } finally {
-                simulator.keyRelease(keypress);
+                KeyBinding.setKeyBindState(keypress.getKeyCode(), false);
             }
         }
         if(command.contains("select")) {
-            Robot simulator = new Robot();
-            try {
-                if(number == 1) keypress = KeyEvent.VK_1;
-                if(number == 2) keypress = KeyEvent.VK_2;
-                if(number == 3) keypress = KeyEvent.VK_3;
-                if(number == 4) keypress = KeyEvent.VK_4;
-                if(number == 5) keypress = KeyEvent.VK_5;
-                if(number == 6) keypress = KeyEvent.VK_6;
-                if(number == 7) keypress = KeyEvent.VK_7;
-                if(number == 8) keypress = KeyEvent.VK_8;
-                if(number == 9) keypress = KeyEvent.VK_9;
-                simulator.keyPress(keypress);
-                Thread.sleep(10);
-                simulator.keyRelease(keypress);
-            } catch (Exception e) {
 
-            } finally {
-                simulator.keyRelease(keypress);
-            }
+            number = number -1;
+
+            /*keypress = mc.gameSettings.keyBindsHotbar[number];
+
+
+            KeyBinding.setKeyBindState(keypress.getKeyCode(), true);
+            System.out.println(keypress.isPressed());
+            Thread.sleep(100);
+            KeyBinding.setKeyBindState(keypress.getKeyCode(), false);
+
+            System.out.println(keypress.isPressed());*/
+
+            mc.thePlayer.inventory.currentItem = number; // not thread safe but fuck it for now
+
         }
     }
     public synchronized void additionalControls(String command)
