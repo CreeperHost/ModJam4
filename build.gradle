@@ -49,3 +49,7 @@ processResources
         exclude 'mcmod.info'
     }
 }
+
+dependencies {
+		compile files('libs/cmu_us_kal.jar','libs/cmulex.jar','libs/en_us.jar','libs/freetts.jar','libs/jsapi.jar','libs/sphinx4.jar','libs/voce.jar','libs/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar')
+}
