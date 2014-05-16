@@ -5,6 +5,7 @@ package net.creeperhost.modjam4.voice;
 import cpw.mods.fml.common.ObfuscationReflectionHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.util.MouseHelper;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -26,6 +27,9 @@ public class VoceInterface {
             @Override
             public void run() {
                 //Loop until Minecraft exits.
+
+
+
                 while (true) {
                     try {
                         Thread.sleep(200);
@@ -54,7 +58,30 @@ public class VoceInterface {
                                 } catch (Exception e) {
 
                                 }
+                            } else if (s.contains("turn")) {
+                                try {
+                                    int turnTime = 2000;
+                                    int sleepTime = 10;
+                                    int time = 0;
+
+                                    int changeAmount;
+                                    if (s.contains("left")) changeAmount = -600; else if (s.contains("right")) changeAmount = 600; else changeAmount = 1200;
+
+                                    int changeAmountIncremental = changeAmount / (turnTime / 50);
+
+                                    while (time < turnTime)
+                                    {
+                                        time = time + 50;
+                                        Thread.sleep(10);
+                                        Minecraft.getMinecraft().thePlayer.setAngles(changeAmountIncremental, 0);
+
+                                    }
+                                } catch (Exception e)
+                                {
+
+                                }
                             }
+
                             if(commandprocessor != null && commandprocessor.isAlive()) continue; //We probably shouldn't try and create a new VoceProcesor if the previous one is still running...
                             //Spawn us a thread to handle the actual processing so we can continue to monitor here for 'stop'
                             commandprocessor = new VoceProcessor(s);

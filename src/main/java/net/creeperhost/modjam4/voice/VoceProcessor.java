@@ -153,7 +153,7 @@ public class VoceProcessor extends Thread {
                 KeyBinding.setKeyBindState(keypress.getKeyCode(), false);
             }
         }
-        if(command.contains("select")) {
+        else if(command.contains("select")) {
 
             number = number -1;
 
@@ -171,6 +171,7 @@ public class VoceProcessor extends Thread {
 
         }
     }
+    
     public synchronized void additionalControls(String command)
     {
         if(command.length() <= 7 || !command.contains(" ")) return; //Enough of recognizing just 'heroine', kthxbai

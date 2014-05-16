@@ -14,6 +14,8 @@ public <tools> = <voicecommand> select (one | two | three | four | five | six | 
 public <stop> = <voicecommand> stop [it | everything];
 public <mine> = <voicecommand> mine [(five | ten | fifteen)];
 public <use> = <voicecommand> use;
+<turn> = <voicecommand> turn;
+public <turnDir> = <turn> (left | right | round);
 
 <additionalcommand> = hero brine | heroine;
 public <weather> = <additionalcommand> what is the weather [like] [today | now];
