@@ -38,10 +38,11 @@ public class VoceInterface {
                             //Let's stop everything we're doing
                             commandprocessor.stop();//Would love to use interrupt but need to rework how movement works in VoceProcessor.
                         } else {
+                            if(commandprocessor != null && commandprocessor.isAlive()) continue; //We probably shouldn't try and create a new VoceProcesor if the previous one is still running...
                             //Spawn us a thread to handle the actual processing so we can continue to monitor here for 'stop'
                             System.out.println("Start command");
                             commandprocessor = new VoceProcessor(s);
-                            commandprocessor.start();//WHY ARE YOU BLOCKING
+                            commandprocessor.start();//WHY ARE YOU BLOCKING, STILL, I WILL FIND YOU, AND I WILL KILL YOU
                             System.out.println("Stop command");
                         }
                     }
