@@ -6,13 +6,13 @@
 
 grammar digits;
 
-public <voicecommand> = steve;
+<voicecommand> = steve;
 public <walkDir> = <voicecommand> walk (forward | forwards | backward | backwards | left | right) [(five | ten | fifteen | twenty | thirty | forty | fifty | sixty | seventy | eighty | ninety)];
 public <jumpDir> = <voicecommand> jump (forward | forwards | backward | backwards | left | right) [(one | two | three | four | five)];
-public <menu> = <voicecommand> (open [the] menu | close [the] menu);
+public <menu> = <voicecommand> (open | close) [the] menu;
 public <tools> = <voicecommand> select (one | two | three | four | five | six | seven | eight | nine);
 public <stop> = <voicecommand> stop [it | everything];
 public <attack> = <voicecommand> hit [(five | ten | fifteen)];
 
-public <additionalcommand> = hero brine | heroine;
+<additionalcommand> = hero brine | heroine;
 public <weather> = <additionalcommand> what is the weather [like] [today | now];

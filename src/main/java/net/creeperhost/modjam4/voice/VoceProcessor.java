@@ -29,7 +29,6 @@ public class VoceProcessor extends Thread {
         int length = 350;
         int number = 1;
         String[] data = command.split(" ");
-        System.out.println(data[(data.length-1)]);
         if(data[(data.length-1)].equals("one")) number = 1;
         if(data[(data.length-1)].equals("two")) number = 2;
         if(data[(data.length-1)].equals("three")) number = 3;
@@ -150,6 +149,7 @@ public class VoceProcessor extends Thread {
     }
     public static void additionalControls(String command)
     {
+        if(command.length() <= 7 || !command.contains(" ")) return; //Enough of recognizing just 'heroine', kthxbai
         System.out.println("Additional functions: " + command);
         //Jarvis like functions
     }
