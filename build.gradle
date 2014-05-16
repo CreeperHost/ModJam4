@@ -18,12 +18,10 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'forge'
 
-mcversion = "1.7.2"
+mccversion = "1.7.2"
 modversion = "0.5"
 buildnumber = System.getenv().BUILD_NUMBER ?: "UNKNOWN"
-version = mcversion + "-" + modversion + "-" + buildnumber
-
-
+version = mccversion + "-" + modversion + "-" + buildnumber
 
 group= "net.creeperhost.modjam4" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ModJam4"
