@@ -1,14 +1,14 @@
 [
 {
-  "modid": "modjam4",
-  "name": "ModJam4",
+  "modid": "harken",
+  "name": "Harken",
   "description": "The CreeperHost ModJam4 mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorsList": ["Hanse00"],
-  "credits": "Searge for the awesome ModJam idea!",
+  "authorsList": ["Paul_T", "Cloudhunter", "Hanse00", "Luke_H"],
+  "credits": "AbleGamers foundation for assisting with recognition",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

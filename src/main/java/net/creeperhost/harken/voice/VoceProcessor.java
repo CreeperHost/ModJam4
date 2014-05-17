@@ -2,6 +2,7 @@ package net.creeperhost.harken.voice;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraftforge.common.MinecraftForge;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -13,11 +14,13 @@ import java.util.Map;
  */
 public class VoceProcessor extends Thread {
 
-    public static String _s = "";
+    public String _s = "";
+    public Boolean _wearing = false;
 
-    public VoceProcessor(String s)
+    public VoceProcessor(String s, Boolean wearing)
     {
         _s = s;//Collect the text version of voice input into a variable the thread can access safely.
+        _wearing = wearing;//If the user is wearing their glasses
     }
     public void run()
     {
@@ -33,6 +36,7 @@ public class VoceProcessor extends Thread {
             }
             return;
         }
+        if(!_wearing) return;
         //Advanced commands outside base requirements, usable only with glasses
         if (((_s.length() >= 7) && _s.substring(0, 7).equals("heroine")) || ((_s.length() >= 9) && _s.substring(0, 9).equals("hero brine"))) {
             additionalControls(_s);
@@ -84,11 +88,8 @@ public class VoceProcessor extends Thread {
         int number = 0;
         String[] data = command.split(" ");
         number = number_spoken_to_int(data[(data.length-1)]);
-
-        if (command.contains("forward")) {
-            keypress = mc.gameSettings.keyBindForward;
-        }
-        else if (command.contains("backward")) {
+        keypress = mc.gameSettings.keyBindForward;
+        if (command.contains("backward")) {
             keypress = mc.gameSettings.keyBindBack;
         }
         else if (command.contains("left")) {
@@ -150,14 +151,42 @@ public class VoceProcessor extends Thread {
 
         }
     }
-
+    public String getWeather()
+    {
+        return "Sunny"; //Mr. Hand's horse will be assisting with replacing this.
+    }
+    public boolean isSassy()
+    {
+        return (Math.random() * 100) > 80 ? true : false;
+    }
     public synchronized void additionalControls(String command)
     {
         if(command.length() <= 7 || !command.contains(" ")) return; //Enough of recognizing just 'heroine', kthxbai
         String[] data = command.split(" ");
         command = command.replace(data[0],"");
-        voce.SpeechInterface.synthesize("I am sorry, I do not understand "+ command);
+        if(command.contains("weather"))
+        {
+            if (isSassy()) {
+                playSound("Weather/Prefix");
+                playSound("Weather/"+getWeather());
+            } else {
+                playSound("Weather/Sassy");
+            }
+            return;
+        }
+        playSound("resource:/assets/harken/sounds/herobrine/Two.mp3");
         //Jarvis like functions
+    }
+    public boolean playSound(String path)
+    {
+        try {
+            System.out.println(path);
+        } catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return true;
     }
 }
 

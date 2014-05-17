@@ -50,6 +50,8 @@ public class Harken {
         System.out.println("Welcome to Harken, a modjam project aimed to improve accessiblity for disabled gamers.");
         VoceInterface.listen();
 	}
+    static final String soundPrefix = "/assets/harken/sounds/herobrine/";
+
     public boolean downloadLib(String url)
     {
         try {
