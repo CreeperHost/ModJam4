@@ -1,7 +1,7 @@
-package net.creeperhost.modjam4.item;
+package net.creeperhost.harken.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.creeperhost.modjam4.reference.ItemInfo;
+import net.creeperhost.harken.reference.ItemInfo;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemArmor;

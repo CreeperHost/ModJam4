@@ -1,7 +1,7 @@
-package net.creeperhost.modjam4.item;
+package net.creeperhost.harken.item;
 
-import net.creeperhost.modjam4.reference.ItemInfo;
-import net.creeperhost.modjam4.reference.ModInfo;
+import net.creeperhost.harken.reference.ItemInfo;
+import net.creeperhost.harken.reference.ModInfo;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemArmor;

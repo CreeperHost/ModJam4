@@ -1,4 +1,4 @@
-package net.creeperhost.modjam4.voice;
+package net.creeperhost.harken.voice;
 
 
 
@@ -10,7 +10,7 @@ import java.io.*;
 
 
 /**
- * Created by Minion 2 on 15/05/2014.
+ * Created by Cloudhunter on 15/05/2014.
  */
 public class VoceInterface {
     public static Thread commandprocessor = null;
@@ -21,8 +21,8 @@ public class VoceInterface {
 
         try {
             new File("./config/voice/").mkdirs();
-            InputStream in = VoceInterface.class.getResourceAsStream("/assets/modjam4/voice/digits.gram");
-            OutputStream out = new FileOutputStream(new File("./config/Voice/digits.gram"));
+            InputStream in = VoceInterface.class.getResourceAsStream("/assets/harken/voice/commands.gram");
+            OutputStream out = new FileOutputStream(new File("./config/Voice/commands.gram"));
             byte[] buffer = new byte[10768];
             int len;
 
@@ -33,7 +33,7 @@ public class VoceInterface {
             in.close();
             out.close();
 
-            in = VoceInterface.class.getResourceAsStream("/assets/modjam4/voice/voce.config.xml");
+            in = VoceInterface.class.getResourceAsStream("/assets/harken/voice/voce.config.xml");
             out = new FileOutputStream(new File("./config/Voice/voce.config.xml"));
             buffer = new byte[10768];
 
@@ -47,7 +47,7 @@ public class VoceInterface {
             e.printStackTrace();
         }
         voce.SpeechInterface.init("./config/voice", synthesizer, true,
-                "./config/voice/", "digits");
+                "./config/voice/", "commands");
         if(synthesizer) Voice = new SpeechSynthesizer("kevin16");
     }
     public static void listen() {

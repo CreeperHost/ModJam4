@@ -1,8 +1,7 @@
-package net.creeperhost.modjam4.voice;
+package net.creeperhost.harken.voice;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
-import voce.SpeechSynthesizer;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

@@ -1,4 +1,4 @@
-package net.creeperhost.modjam4.reference;
+package net.creeperhost.harken.reference;
 
 public class ItemInfo {
 	public static final String GLASSES_NAME = "glasses";

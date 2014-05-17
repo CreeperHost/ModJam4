@@ -23,8 +23,8 @@ modversion = "0.5"
 buildnumber = System.getenv().BUILD_NUMBER ?: "UNKNOWN"
 version = mccversion + "-" + modversion + "-" + buildnumber
 
-group= "net.creeperhost.modjam4" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "ModJam4"
+group= "net.creeperhost.harken" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "Harken"
 
 minecraft {
     version = "1.7.2-10.12.1.1060"
