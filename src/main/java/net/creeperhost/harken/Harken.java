@@ -5,9 +5,11 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import net.creeperhost.harken.event.HarkenEvents;
 import net.creeperhost.harken.item.ModItems;
 import net.creeperhost.harken.reference.ModInfo;
 import net.creeperhost.harken.voice.VoceInterface;
+import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.lang.Class;
@@ -41,6 +43,9 @@ public class Harken {
 	@SuppressWarnings("unused")
     public void init(FMLInitializationEvent event) {
 		ModItems.registerRecipes();
+
+		//Register interaction even listener
+		MinecraftForge.EVENT_BUS.register(new HarkenEvents());
     }
 
 	@EventHandler
