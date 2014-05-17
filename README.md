@@ -1,4 +1,5 @@
-#Harken by CreeperHost (Paul_T, Cloudhunter, Hanse00, Luke_H)
+#Harken by CreeperHost
+(Paul_T, Cloudhunter, Hanse00, Luke_H)
 For Minecraft Forge 10.12.1.1060 and Minecraft 1.7.2
 
 ##Features
