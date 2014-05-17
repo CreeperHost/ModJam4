@@ -1,4 +1,4 @@
-#ModJam4 by CreeperHost
+#Harken by CreeperHost (Paul_T, Cloudhunter, Hanse00, Luke_H)
 For Minecraft Forge 10.12.1.1060 and Minecraft 1.7.2
 
 ##Features
@@ -6,7 +6,7 @@ For Minecraft Forge 10.12.1.1060 and Minecraft 1.7.2
 * IMP (In Mod Purchases), get your glasses for a one time payment of $999
 
 ##Download
-[Latests build](http://www.creeperrepo.net/ci/ModJam4-CreeperHost/ModJam4-1.7.2-0.1.jar)
+[Builds](http://www.creeperrepo.net/ci/ModJam4-CreeperHost/)
 
 ##Recipes
 Glasses Sides
