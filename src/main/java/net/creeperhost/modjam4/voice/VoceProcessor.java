@@ -2,6 +2,7 @@ package net.creeperhost.modjam4.voice;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
+import voce.SpeechSynthesizer;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -43,42 +44,39 @@ public class VoceProcessor extends Thread {
 
     public static Minecraft mc = Minecraft.getMinecraft();
 
-    static Map<String, Integer> tmp = new HashMap<String, Integer>();
+    static Map<String, Integer> spkntoint = new HashMap<String, Integer>();
 
     static {
-        tmp.put("one", 1);
-        tmp.put("two", 2);
-        tmp.put("three", 3);
-        tmp.put("four", 4);
-        tmp.put("five", 5);
-        tmp.put("six", 6);
-        tmp.put("seven", 7);
-        tmp.put("eight", 8);
-        tmp.put("nine", 9);
-        tmp.put("ten", 10);
-        tmp.put("eleven", 11);
-        tmp.put("twelve", 12);
-        tmp.put("thirteen", 13);
-        tmp.put("fourteen", 14);
-        tmp.put("fifteen", 15);
-        tmp.put("sixteen", 16);
-        tmp.put("seventeen", 17);
-        tmp.put("eighteen", 18);
-        tmp.put("nineteen", 19);
-        tmp.put("twenty", 20);
-        tmp.put("thirty", 30);
-        tmp.put("forty", 40);
-        tmp.put("fifty", 50);
-        tmp.put("sixty", 60);
-        tmp.put("seventy", 70);
-        tmp.put("eighty", 80);
-        tmp.put("ninety", 90);
+        spkntoint.put("one", 1);
+        spkntoint.put("two", 2);
+        spkntoint.put("three", 3);
+        spkntoint.put("four", 4);
+        spkntoint.put("five", 5);
+        spkntoint.put("six", 6);
+        spkntoint.put("seven", 7);
+        spkntoint.put("eight", 8);
+        spkntoint.put("nine", 9);
+        spkntoint.put("ten", 10);
+        spkntoint.put("eleven", 11);
+        spkntoint.put("twelve", 12);
+        spkntoint.put("thirteen", 13);
+        spkntoint.put("fourteen", 14);
+        spkntoint.put("fifteen", 15);
+        spkntoint.put("sixteen", 16);
+        spkntoint.put("seventeen", 17);
+        spkntoint.put("eighteen", 18);
+        spkntoint.put("nineteen", 19);
+        spkntoint.put("twenty", 20);
+        spkntoint.put("thirty", 30);
+        spkntoint.put("forty", 40);
+        spkntoint.put("fifty", 50);
+        spkntoint.put("sixty", 60);
+        spkntoint.put("seventy", 70);
+        spkntoint.put("eighty", 80);
+        spkntoint.put("ninety", 90);
     }
 
-    public static int number_spoken_to_int(String number)
-    {
-        return tmp.containsKey(number) ? tmp.get(number) : 0;
-    }
+    public static int number_spoken_to_int(String number) { return spkntoint.containsKey(number) ? spkntoint.get(number) : 0; }
     public synchronized void coreControls(String command) throws AWTException
     {
         //Movement and game controls
@@ -93,9 +91,6 @@ public class VoceProcessor extends Thread {
         }
         else if (command.contains("backward")) {
             keypress = mc.gameSettings.keyBindBack;
-        }
-        else if (command.contains("menu")) {
-            //keypress = menu;
         }
         else if (command.contains("left")) {
             keypress = mc.gameSettings.keyBindLeft;
@@ -130,11 +125,8 @@ public class VoceProcessor extends Thread {
                 simulator.keyRelease(KeyEvent.VK_ESCAPE);
             }
         }
-
-        if(command.contains("walk") || command.contains("mine")) {
+        else if(command.contains("walk") || command.contains("mine")) {
             try {
-                int wln = 0;
-
                 if(number >= 1) { // If you've asked for "a little" or "a bit" or "one"
                     KeyBinding.setKeyBindState(keypress.getKeyCode(), true);
                     Thread.sleep(length*(number*2));
@@ -155,17 +147,6 @@ public class VoceProcessor extends Thread {
         else if(command.contains("select")) {
 
             number = number -1;
-
-            /*keypress = mc.gameSettings.keyBindsHotbar[number];
-
-
-            KeyBinding.setKeyBindState(keypress.getKeyCode(), true);
-            System.out.println(keypress.isPressed());
-            Thread.sleep(100);
-            KeyBinding.setKeyBindState(keypress.getKeyCode(), false);
-
-            System.out.println(keypress.isPressed());*/
-
             mc.thePlayer.inventory.currentItem = number; // not thread safe but fuck it for now
 
         }
@@ -174,7 +155,9 @@ public class VoceProcessor extends Thread {
     public synchronized void additionalControls(String command)
     {
         if(command.length() <= 7 || !command.contains(" ")) return; //Enough of recognizing just 'heroine', kthxbai
-        System.out.println("Additional functions: " + command);
+        String[] data = command.split(" ");
+        command = command.replace(data[0],"");
+        voce.SpeechInterface.synthesize("I am sorry, I do not understand "+ command);
         //Jarvis like functions
     }
 }

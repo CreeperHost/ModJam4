@@ -4,15 +4,18 @@ package net.creeperhost.modjam4.voice;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
+import voce.SpeechSynthesizer;
+
 import java.io.*;
+
 
 /**
  * Created by Minion 2 on 15/05/2014.
  */
 public class VoceInterface {
     public static Thread commandprocessor = null;
-
-    public static void init() {
+    public static voce.SpeechSynthesizer Voice = null;
+    public static void init(boolean synthesizer) {
 
         //Extract file from zip. We can actually use this same principle to download a file and write to disk, too!
 
@@ -43,12 +46,11 @@ public class VoceInterface {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        voce.SpeechInterface.init("./config/voice", false, true,
+        voce.SpeechInterface.init("./config/voice", synthesizer, true,
                 "./config/voice/", "digits");
-
-
-
+        if(synthesizer) Voice = new SpeechSynthesizer("kevin16");
+    }
+    public static void listen() {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -88,14 +90,14 @@ public class VoceInterface {
                                     int sleepTime = 10;
                                     int time = 0;
 
-                                    int changeAmount;
-                                    if (s.contains("left")) {
+                                    int changeAmount = (s.contains("left") ? -600 : (s.contains("right") ? 600 : 1200));
+                                    /*if (s.contains("left")) {
                                         changeAmount = -600;
                                     } else if (s.contains("right")) {
                                         changeAmount = 600;
                                     } else {
                                         changeAmount = 1200;
-                                    }
+                                    }*/
 
                                     int changeAmountIncremental = changeAmount / (turnTime / 50);
 

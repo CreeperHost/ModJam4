@@ -21,18 +21,6 @@ public class ModJam4 {
     @EventHandler
     @SuppressWarnings("unused")
     public void preinit(FMLPreInitializationEvent event) {
-	    ModItems.init();
-    }
-
-	@EventHandler
-	@SuppressWarnings("unused")
-    public void init(FMLInitializationEvent event) {
-		ModItems.registerRecipes();
-    }
-
-	@EventHandler
-	@SuppressWarnings("unused")
-	public void postinit(FMLPostInitializationEvent event) {
         try {
             Class.forName("voce.Utils");//Let's see if we have our libraries, hopefully gradle has this shit covered :D
         } catch( ClassNotFoundException e ) {
@@ -46,7 +34,21 @@ public class ModJam4 {
             downloadLib("http://www.creeperrepo.net/ci/ModJam4-CreeperHost/libs/cmu_us_kal.jar");
             downloadLib("http://www.creeperrepo.net/ci/ModJam4-CreeperHost/libs/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar");
         }
-        VoceInterface.init();
+	    ModItems.init();
+    }
+
+	@EventHandler
+	@SuppressWarnings("unused")
+    public void init(FMLInitializationEvent event) {
+		ModItems.registerRecipes();
+    }
+
+	@EventHandler
+	@SuppressWarnings("unused")
+	public void postinit(FMLPostInitializationEvent event) {
+        VoceInterface.init(false);
+        System.out.println("Welcome to W.S.N.A.P.N, a modjam project aimed to improve accessiblity for disabled gamers.");
+        VoceInterface.listen();
 	}
     public boolean downloadLib(String url)
     {
