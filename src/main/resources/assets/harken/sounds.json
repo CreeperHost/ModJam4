@@ -1,0 +1,5 @@
+{
+  "herobrine.weather.prefix": {"category": "hostile","sounds": [{"name": "herobrine/Weather/Prefix","stream": false}]},
+  "herobrine.weather.sunny": {"category": "hostile","sounds": [{"name": "herobrine/Weather/Sunny","stream": false}]},
+  "herobrine.weather.sassy": {"category": "hostile","sounds": [{"name": "herobrine/weather/sassy","stream": false}]}
+}

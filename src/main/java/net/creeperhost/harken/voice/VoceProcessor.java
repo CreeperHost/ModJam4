@@ -2,7 +2,6 @@ package net.creeperhost.harken.voice;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraftforge.common.MinecraftForge;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -82,6 +81,8 @@ public class VoceProcessor extends Thread {
     public static int number_spoken_to_int(String number) { return spkntoint.containsKey(number) ? spkntoint.get(number) : 0; }
     public synchronized void coreControls(String command) throws AWTException
     {
+        playSound("herobrine.weather.sassy");
+        playSound("dig.stone");
         //Movement and game controls
         //Input emulation, need to fetch Minecraft key bindings and adjust as required
         int length = 350;//Need to calculate length of time holding a key to pass 1 block
@@ -180,6 +181,8 @@ public class VoceProcessor extends Thread {
     public boolean playSound(String path)
     {
         try {
+            net.minecraft.entity.player.EntityPlayer tmp = Minecraft.getMinecraft().thePlayer;
+            tmp.playSound(path,0.5F,0.5F);
             System.out.println(path);
         } catch(Exception e)
         {
