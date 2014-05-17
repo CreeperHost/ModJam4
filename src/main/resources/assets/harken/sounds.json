@@ -1,5 +1,14 @@
 {
-  "herobrine.weather.prefix": {"category": "hostile","sounds": [{"name": "herobrine/Weather/Prefix","stream": false}]},
-  "herobrine.weather.sunny": {"category": "hostile","sounds": [{"name": "herobrine/Weather/Sunny","stream": false}]},
-  "herobrine.weather.sassy": {"category": "hostile","sounds": [{"name": "herobrine/weather/sassy","stream": false}]}
+  "herobrine.weather.prefix": {"category": "hostile","sounds": [{"name": "herobrine/weather/prefix","stream": false}]},
+  "herobrine.weather.rain": {"category": "hostile","sounds": [{"name": "herobrine/weather/rainy","stream": false}]},
+  "herobrine.weather.snow": {"category": "hostile","sounds": [{"name": "herobrine/weather/snowy","stream": false}]},
+  "herobrine.weather.sun": {"category": "hostile","sounds": [{"name": "herobrine/weather/sunny","stream": false}]},
+  "herobrine.weather.storm": {"category": "hostile","sounds": [{"name": "herobrine/weather/stormy","stream": false}]},
+  "herobrine.weather.sassy": {"category": "hostile","sounds": [{"name": "herobrine/weather/sassy","stream": false}]},
+
+  "herobrine.fail.1": {"category": "hostile","sounds": [{"name": "herobrine/fail/Dont","stream": false}]},
+  "herobrine.fail.2": {"category": "hostile","sounds": [{"name": "herobrine/fail/Dreadful","stream": false}]},
+  "herobrine.fail.3": {"category": "hostile","sounds": [{"name": "herobrine/fail/Failed","stream": false}]},
+  "herobrine.fail.4": {"category": "hostile","sounds": [{"name": "herobrine/fail/ID","stream": false}]},
+  "herobrine.fail.5": {"category": "hostile","sounds": [{"name": "herobrine/fail/Understand","stream": false}]}
 }

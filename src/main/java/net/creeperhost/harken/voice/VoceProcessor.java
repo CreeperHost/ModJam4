@@ -81,8 +81,6 @@ public class VoceProcessor extends Thread {
     public static int number_spoken_to_int(String number) { return spkntoint.containsKey(number) ? spkntoint.get(number) : 0; }
     public synchronized void coreControls(String command) throws AWTException
     {
-        playSound("herobrine.weather.sassy");
-        playSound("dig.stone");
         //Movement and game controls
         //Input emulation, need to fetch Minecraft key bindings and adjust as required
         int length = 350;//Need to calculate length of time holding a key to pass 1 block
@@ -154,7 +152,7 @@ public class VoceProcessor extends Thread {
     }
     public String getWeather()
     {
-        return "Sunny"; //Mr. Hand's horse will be assisting with replacing this.
+        return "sunny"; //Mr. Hand's horse will be assisting with replacing this.
     }
     public boolean isSassy()
     {
@@ -168,22 +166,26 @@ public class VoceProcessor extends Thread {
         if(command.contains("weather"))
         {
             if (isSassy()) {
-                playSound("Weather/Prefix");
-                playSound("Weather/"+getWeather());
+                playSound("herobrine.weather.prefix");
+                playSound("herobrine.weather."+getWeather());
             } else {
-                playSound("Weather/Sassy");
+                playSound("herobrine.weather.sassy");
             }
             return;
         }
-        playSound("resource:/assets/harken/sounds/herobrine/Two.mp3");
+        playSound("herobrine.fail."+randInt(1,5));
         //Jarvis like functions
+    }
+    public static int randInt(int min, int max) {
+        java.util.Random rand = new java.util.Random();
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
     }
     public boolean playSound(String path)
     {
         try {
             net.minecraft.entity.player.EntityPlayer tmp = Minecraft.getMinecraft().thePlayer;
             tmp.playSound(path,0.5F,0.5F);
-            System.out.println(path);
         } catch(Exception e)
         {
             System.out.println(e.getMessage());
