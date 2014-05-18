@@ -187,6 +187,10 @@ public class VoceProcessor extends Thread {
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
     }
+    public static void playerDead()
+    {
+        playSound("herobrine.death."+randInt(1,5));
+    }
     public boolean speakNumber(int Number)
     {
         try {
@@ -217,7 +221,7 @@ public class VoceProcessor extends Thread {
         }
         return true;
     }
-    public boolean playSound(String path)
+    public static boolean playSound(String path)
     {
         try {
             SoundHandler.onEntityPlay(path, 1, 1);

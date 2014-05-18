@@ -10,6 +10,7 @@ import net.creeperhost.harken.MCBridge.MCInformation;
 import net.creeperhost.harken.handler.SoundHandler;
 import net.creeperhost.harken.item.ModItems;
 import net.creeperhost.harken.reference.ModInfo;
+import net.creeperhost.harken.voice.VoceProcessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
@@ -23,8 +24,7 @@ public class HarkenEvents {
 		if (isServer(event.entityPlayer.getEntityWorld())) {
 			if (isWearingGlasses(event.entityPlayer)) {
 				if (actionWasRightClick(event.action)) {
-					Harken.logger.info("I right clicked while wearing glasses!");
-					SoundHandler.onEntityPlay("herobrine.insult.human", 1, 1);
+					//Let's use this to open some kind of instructions.
 				}
 			}
 		}
@@ -54,9 +54,7 @@ public class HarkenEvents {
     public void onLivingDeath(LivingDeathEvent event)
     {
         if (!event.entityLiving.isClientWorld() || !(event.entityLiving instanceof EntityPlayer)) return;
-
-        //this is where we have verified the player has died
-
+        VoceProcessor.playerDead();
     }
 
 	private boolean isServer(World world) {
