@@ -489,5 +489,82 @@
       "name": "herobrine/weather/prefix",
 	  "stream": false
     }]
+  },
+  "herobrine.misc.is": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/is",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.isnot": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/isnot",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.minus": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/minus",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.yes": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/yes",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.no": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/no",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.youcanbreakthis": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/youcanbreakthis",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.youcannotbreakthis": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/youcannotbreakthis",
+	  "stream": false
+    }]
+  },
+  "herobrine.lightlevel.myminionsarecoming": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/lightlevel/myminionsarecoming",
+	  "stream": false
+    }]
+  },
+  "herobrine.lightlevel.thecurrentlightlevelis": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/lightlevel/thecurrentlightlevelis",
+	  "stream": false
+    }]
+  },
+  "herobrine.lightlevel.unfortunatelytheyarestayingclear": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/lightlevel/unfortunatelytheyarestayingclear",
+	  "stream": false
+    }]
+  },
+  "herobrine.lightlevel.wecanonlyhope": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/lightlevel/wecanonlyhope",
+	  "stream": false
+    }]
   }
 }
