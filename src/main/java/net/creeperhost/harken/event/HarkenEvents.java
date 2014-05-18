@@ -15,6 +15,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 public class HarkenEvents {
 	@SubscribeEvent
@@ -46,6 +47,16 @@ public class HarkenEvents {
         if (tickCount == Integer.MAX_VALUE || tickCount < 0) tickCount = 0;
 
         //other stuff
+    }
+
+    @SubscribeEvent
+    @SuppressWarnings("unused")
+    public void onLivingDeath(LivingDeathEvent event)
+    {
+        if (!event.entityLiving.isClientWorld() || !(event.entityLiving instanceof EntityPlayer)) return;
+
+        //this is where we have verified the player has died
+
     }
 
 	private boolean isServer(World world) {
