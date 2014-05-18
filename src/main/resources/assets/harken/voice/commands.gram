@@ -19,7 +19,7 @@ public <turnDir> = <turn> (left | right | round);
 
 <additionalcommand> = hero brine | heroine | hero bream;
 public <weather> = <additionalcommand> what is the weather [like] [today | now];
-public <location> = <additionalcommand> (where am i | what (is | are) my (location | [co] ordinates);
+public <location> = <additionalcommand> (where am i | what (is | are) my (location | [co] ordinates));
 public <mining> = <additionalcommand> can i mine [this];
 public <mobs> = <additionalcommand> will (monsters | mobs | enemies | baddies | bad things) spawn here;
 public <time> = <additionalcommand> what time is it | is it (day | night);

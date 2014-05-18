@@ -158,7 +158,6 @@ public class VoceProcessor extends Thread {
     }
     public synchronized void additionalControls(String command)
     {
-        System.out.println(MCInformation.canMineBlock());
         if(command.length() <= 7 || !command.contains(" ")) return; //Enough of recognizing just 'heroine', kthxbai
         String[] data = command.split(" ");
         command = command.replace(data[0],"");
@@ -172,7 +171,7 @@ public class VoceProcessor extends Thread {
             }
             return;
         }
-        if(command.contains("where am i")||command.contains("location")||command.contains("ordinates"))
+        else if(command.contains("where am i")||command.contains("location")||command.contains("ordinates"))
         {
             playSound("herobrine.misc.x");
             speakNumber(MCInformation.x);
@@ -180,6 +179,11 @@ public class VoceProcessor extends Thread {
             speakNumber(MCInformation.y);
             playSound("herobrine.misc.z");
             speakNumber(MCInformation.z);
+            return;
+        }
+        else if(command.contains("mine"))
+        {
+            playSound(MCInformation.canMineBlock() ? "herobrine.misc.youcanbreakthis" : "herobrine.misc.youcannotbreakthis");
             return;
         }
         playSound("herobrine.fail."+randInt(1,5));
@@ -199,7 +203,7 @@ public class VoceProcessor extends Thread {
         try {
             if (Number < 0)
             {
-                playSound("herobrine.numbers.minus");
+                playSound("herobrine.misc.minus");
                 Number = -Number;
             }
             int ones, tens, hundreds, thousands = 0;
