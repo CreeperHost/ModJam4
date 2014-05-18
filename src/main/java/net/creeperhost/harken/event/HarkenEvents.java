@@ -1,8 +1,12 @@
 package net.creeperhost.harken.event;
 
+import com.google.common.eventbus.Subscribe;
+import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
+import cpw.mods.fml.common.gameevent.TickEvent;
 import net.creeperhost.harken.Harken;
+import net.creeperhost.harken.MCBridge.MCInformation;
 import net.creeperhost.harken.handler.SoundHandler;
 import net.creeperhost.harken.item.ModItems;
 import net.creeperhost.harken.reference.ModInfo;
@@ -25,6 +29,23 @@ public class HarkenEvents {
 		}
 	}
 
+    private int tickCount;
+
+    @SubscribeEvent
+    @SuppressWarnings("unused")
+    public void onClientTickEvent(TickEvent.ClientTickEvent clientTickEvent)
+    {
+        if(clientTickEvent.phase != TickEvent.Phase.END) return;
+
+        if ((++tickCount % 20) == 0)
+        {
+            // stuff to do once every second
+            MCInformation.gatherInformation();
+        }
+
+        //other stuff
+    }
+
 	private boolean isServer(World world) {
 		return !world.isRemote;
 	}
@@ -37,3 +58,4 @@ public class HarkenEvents {
 		return (action == Action.RIGHT_CLICK_AIR) || (action == Action.RIGHT_CLICK_BLOCK);
 	}
 }
+

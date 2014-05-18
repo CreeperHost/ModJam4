@@ -1,5 +1,6 @@
 package net.creeperhost.harken;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.Mod;
@@ -43,9 +44,10 @@ public class Harken {
 	@SuppressWarnings("unused")
     public void init(FMLInitializationEvent event) {
 		ModItems.registerRecipes();
-
+        HarkenEvents events = new HarkenEvents();
 		//Register interaction even listener
-		MinecraftForge.EVENT_BUS.register(new HarkenEvents());
+		MinecraftForge.EVENT_BUS.register(events);
+        FMLCommonHandler.instance().bus().register(events);
     }
 
 	@EventHandler
