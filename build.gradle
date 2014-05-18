@@ -27,7 +27,7 @@ group= "net.creeperhost.harken" // http://maven.apache.org/guides/mini/guide-nam
 archivesBaseName = "Harken"
 
 minecraft {
-    version = "1.7.2-10.12.1.1082"
+    version = "1.7.2-10.12.1.1060"
     assetDir = "eclipse/assets"
 	
 	replace '${version}', project.version
