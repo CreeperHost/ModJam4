@@ -459,5 +459,6 @@
     "sounds": [{
       "name": "herobrine/weather/sunny",
 	  "stream": false
+    }]
   }
 }

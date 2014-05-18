@@ -19,3 +19,4 @@ public <turnDir> = <turn> (left | right | round);
 
 <additionalcommand> = hero brine | heroine;
 public <weather> = <additionalcommand> what is the weather [like] [today | now];
+public <location> = <additionalcommand> where am i
