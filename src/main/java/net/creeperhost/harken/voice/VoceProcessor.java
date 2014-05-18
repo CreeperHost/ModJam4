@@ -186,6 +186,23 @@ public class VoceProcessor extends Thread {
             playSound(MCInformation.canMineBlock() ? "herobrine.misc.youcanbreakthis" : "herobrine.misc.youcannotbreakthis");
             return;
         }
+        /*else if(command.contains("spawn"))
+        {
+            byte result = MCInformation.mobSpawnChance();
+            switch(result)
+            {
+                case 0:
+                    playSound("herobrine.lightlevel.unfortunatelytheyarestayingclear");
+                    break;
+                case 1:
+                    playSound("herobrine.lightlevel.wecanonlyhope");
+                    break;
+                default:
+                    playSound("herobrine.lightlevel.myminionsarecoming");
+                    break;
+            }
+            return;
+        }*/
         playSound("herobrine.fail."+randInt(1,5));
         //Jarvis like functions
     }

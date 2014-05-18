@@ -146,7 +146,43 @@ public class MCInformation {
         });
     }
 
-    protected static MovingObjectPosition getMovingObjectPositionFromPlayer(World par1World, EntityPlayer par2EntityPlayer, boolean par3)
+    public static byte mobSpawnChance()
+    {
+        System.out.println("test");
+        return (Byte) getDelayedResult(new MCTask()
+        {
+            @Override
+            public void run()
+            {
+                EntityPlayer player = mc.thePlayer;
+                int startX = MathHelper.floor_double(player.posX) - 3;
+                int endX = MathHelper.floor_double(player.posX) + 3;
+                int startZ = MathHelper.floor_double(player.posZ) - 3;
+                int endZ = MathHelper.floor_double(player.posZ) + 3;
+                int Y = MathHelper.floor_double(player.posY - 1);
+
+                for (int x = startX; x < endX; x++ )
+                {
+                    for (int z = startZ; z < endZ; z++)
+                    {
+                        int light = mc.theWorld.getFullBlockLightValue(x, y, z);
+                        if (light < 8) {
+                            result = (byte) 2;
+                            return;
+                        }
+                        else if (light > 8) {
+                            result = (byte) 0;
+                            return;
+                        }
+                    }
+                }
+                result = (byte) 1;
+            }
+        });
+
+    }
+
+    protected static MovingObjectPosition getMovingObjectPositionFromPlayer(World par1World, EntityPlayer par2EntityPlayer, boolean par3) // this bit taken from Item
     {
         float f = 1.0F;
         float f1 = par2EntityPlayer.prevRotationPitch + (par2EntityPlayer.rotationPitch - par2EntityPlayer.prevRotationPitch) * f;
