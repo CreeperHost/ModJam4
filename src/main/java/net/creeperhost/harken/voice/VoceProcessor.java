@@ -1,5 +1,6 @@
 package net.creeperhost.harken.voice;
 
+import net.creeperhost.harken.MCBridge.MCInformation;
 import net.creeperhost.harken.handler.SoundHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
@@ -149,10 +150,6 @@ public class VoceProcessor extends Thread {
             mc.thePlayer.inventory.currentItem = number; // not thread safe but fuck it for now
         }
     }
-    public String getWeather()
-    {
-        return "sunny"; //Mr. Hand's horse will be assisting with replacing this.
-    }
     public boolean isSassy()
     {
         return (Math.random() * 100) > 80 ? true : false;
@@ -166,10 +163,20 @@ public class VoceProcessor extends Thread {
         {
             if (!isSassy()) {
                 playSound("herobrine.weather.prefix");
-                playSound("herobrine.weather."+getWeather());
+                playSound("herobrine.weather."+ (MCInformation.biome.equals("Desert") ? 0 : MCInformation.weather));
             } else {
                 playSound("herobrine.weather.sassy");
             }
+            return;
+        }
+        if(command.contains("where am i"))
+        {
+            playSound("herobrine.misc.X");
+            speakNumber(MCInformation.x);
+            playSound("herobrine.misc.Y");
+            speakNumber(MCInformation.y);
+            playSound("herobrine.misc.Z");
+            speakNumber(MCInformation.z);
             return;
         }
         playSound("herobrine.fail."+randInt(1,5));
@@ -179,6 +186,36 @@ public class VoceProcessor extends Thread {
         java.util.Random rand = new java.util.Random();
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
+    }
+    public boolean speakNumber(int Number)
+    {
+        try {
+            int ones, tens, hundreds, thousands = 0;
+            thousands = (Number / 1000) % 10;
+            hundreds = ((Number / 100) % 100) % 10;
+            if (thousands != 0) {
+                playSound("herobrine.numbers." + thousands);
+                playSound("herobrine.misc.Thousand");
+                if (hundreds == 0) playSound("herobrine.misc.and");
+            }
+            if (hundreds != 0) {
+                playSound("herobrine.numbers." + hundreds);
+                playSound("herobrine.misc.Hundred");
+                playSound("herobrine.misc.and");
+            }
+            tens = (Number / 10) % 10;
+            ones = Number % 10;
+            if (tens != 0) {
+                ones = Integer.parseInt(tens + "" + ones);
+            }
+            if (ones != 0) {
+                playSound("herobrine.numbers." + ones);
+            }
+        } catch (Exception e)
+        {
+            return false;
+        }
+        return true;
     }
     public boolean playSound(String path)
     {
