@@ -1,5 +1,6 @@
 package net.creeperhost.harken.voice;
 
+import net.creeperhost.harken.handler.SoundHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 
@@ -144,10 +145,8 @@ public class VoceProcessor extends Thread {
             }
         }
         else if(command.contains("select")) {
-
             number = number -1;
             mc.thePlayer.inventory.currentItem = number; // not thread safe but fuck it for now
-
         }
     }
     public String getWeather()
@@ -165,7 +164,7 @@ public class VoceProcessor extends Thread {
         command = command.replace(data[0],"");
         if(command.contains("weather"))
         {
-            if (isSassy()) {
+            if (!isSassy()) {
                 playSound("herobrine.weather.prefix");
                 playSound("herobrine.weather."+getWeather());
             } else {
@@ -184,8 +183,7 @@ public class VoceProcessor extends Thread {
     public boolean playSound(String path)
     {
         try {
-            net.minecraft.entity.player.EntityPlayer tmp = Minecraft.getMinecraft().thePlayer;
-            tmp.playSound(path,0.5F,0.5F);
+            SoundHandler.onEntityPlay(path, 1, 1);
         } catch(Exception e)
         {
             System.out.println(e.getMessage());

@@ -1,8 +1,32 @@
 {
-  "herobrine.insult.human": {
+  "herobrine.insult.1": {
     "category": "player",
     "sounds": [
-      "herobrine/insult/human"
+      "herobrine/insult/1"
+    ]
+  }
+  "herobrine.insult.2": {
+    "category": "player",
+    "sounds": [
+      "herobrine/insult/2"
+    ]
+  }
+  "herobrine.insult.3": {
+    "category": "player",
+    "sounds": [
+      "herobrine/insult/3"
+    ]
+  }
+  "herobrine.insult.4": {
+    "category": "player",
+    "sounds": [
+      "herobrine/insult/4"
+    ]
+  }
+  "herobrine.insult.5": {
+    "category": "player",
+    "sounds": [
+      "herobrine/insult/5"
     ]
   }
 }
