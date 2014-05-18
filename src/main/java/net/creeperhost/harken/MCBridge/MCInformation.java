@@ -11,7 +11,10 @@ import net.minecraft.world.chunk.Chunk;
 public class MCInformation {
 
     public enum WeatherType {SUNNY, PRECIPITATION, STORM}
+    public enum DimensionType {OVERWORLD, NETHER, END, OTHER}
     public static String biome;
+
+    public static DimensionType dimension = DimensionType.OVERWORLD;
 
     public static WeatherType weather = WeatherType.SUNNY; //default weather
 
@@ -24,7 +27,6 @@ public class MCInformation {
     public static void gatherInformation()
     {
         EntityPlayer player = mc.thePlayer;
-
 
         if (player != null)
         {
@@ -48,6 +50,26 @@ public class MCInformation {
             } else {
                 weather = WeatherType.SUNNY;
             }
+
+            if (mc.theWorld.provider != null)
+            {
+                switch (mc.theWorld.provider.dimensionId)
+                {
+                    case 0:
+                        dimension = DimensionType.OVERWORLD;
+                        break;
+                    case 1:
+                        dimension = DimensionType.END;
+                        break;
+                    case -1:
+                        dimension = DimensionType.NETHER;
+                        break;
+                    default:
+                        dimension = DimensionType.OTHER;
+                        break;
+                }
+            }
+
 
         }
 

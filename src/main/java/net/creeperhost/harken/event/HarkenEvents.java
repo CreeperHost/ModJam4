@@ -37,11 +37,13 @@ public class HarkenEvents {
     {
         if(clientTickEvent.phase != TickEvent.Phase.END) return;
 
-        if ((++tickCount % 20) == 0)
+        if ((++tickCount % 100) == 0)
         {
             // stuff to do once every second
             MCInformation.gatherInformation();
         }
+
+        if (tickCount == Integer.MAX_VALUE || tickCount < 0) tickCount = 0;
 
         //other stuff
     }
