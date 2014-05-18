@@ -10,10 +10,4 @@ public class ItemInfo {
 
 	public static final String GLASSES_FRONT_NAME = "glasses_front";
 	public static final String GLASSES_FRONT_TEXTURE = "glasses_front";
-
-	public static final String GLASSES_NOSE_BRIDGE_NAME = "glasses_nose_bridge";
-	public static final String GLASSES_NOSE_BRIDGE_TEXTURE = "glasses_nose_bridge";
-
-	public static final String GLASSES_GLASS_NAME = "glasses_glass";
-	public static final String GLASSES_GLASS_TEXTURE = "glasses_glass";
 }
