@@ -24,7 +24,7 @@ You start your voice controls by saying 'Steve' followed by any of the following
 * turn around
 
 ##Personal Assistant
-Once you have created your glasses, and have them equipped, you can use one of the following commands by saying 'herobrine' followed by;
+Once you have created your glasses, and have them equipped, you can use one of the following commands by saying 'Herobrine' followed by;
 * what is the weather like
 * where am i
 * what are my co ordinates
