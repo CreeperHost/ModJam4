@@ -566,5 +566,19 @@
       "name": "herobrine/lightlevel/wecanonlyhope",
 	  "stream": false
     }]
+  },
+  "herobrine.coordinates.yourcurrentcoordinatesare": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/coordinates/yourcurrentcoordinatesare",
+	  "stream": false
+    }]
+  },
+  "herobrine.coordinates.yourcurrentlocationis": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/coordinates/yourcurrentlocationis",
+	  "stream": false
+    }]
   }
 }
