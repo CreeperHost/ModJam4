@@ -20,7 +20,7 @@ public class SoundHandler {
     private static Minecraft mc = Minecraft.getMinecraft();
 
 	public static void onEntityPlay(String sound, float volume, float pitch) {
-        queue.add(PositionedSoundRecord.func_147674_a(new ResourceLocation(ModInfo.ID + ":" + sound), volume));
+        queue.add(PositionedSoundRecord.func_147673_a(new ResourceLocation(ModInfo.ID + ":" + sound)));
 	}
 
     public static void soundTick()

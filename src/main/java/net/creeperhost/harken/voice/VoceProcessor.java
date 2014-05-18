@@ -163,7 +163,7 @@ public class VoceProcessor extends Thread {
         {
             if (!isSassy()) {
                 playSound("herobrine.weather.prefix");
-                playSound("herobrine.weather."+ (MCInformation.biome.equals("Desert") ? 0 : MCInformation.weather));
+                playSound("herobrine.weather."+ ((MCInformation.biome != null && MCInformation.biome.equals("Desert")) ? 0 : MCInformation.weather.ordinal()));
             } else {
                 playSound("herobrine.weather.sassy");
             }
@@ -171,11 +171,11 @@ public class VoceProcessor extends Thread {
         }
         if(command.contains("where am i")||command.contains("location")||command.contains("ordinates"))
         {
-            playSound("herobrine.misc.X");
+            playSound("herobrine.misc.x");
             speakNumber(MCInformation.x);
-            playSound("herobrine.misc.Y");
+            playSound("herobrine.misc.y");
             speakNumber(MCInformation.y);
-            playSound("herobrine.misc.Z");
+            playSound("herobrine.misc.z");
             speakNumber(MCInformation.z);
             return;
         }
@@ -194,18 +194,23 @@ public class VoceProcessor extends Thread {
     public boolean speakNumber(int Number)
     {
         try {
+            if (Number < 0)
+            {
+                playSound("herobrine.numbers.minus");
+                Number = -Number;
+            }
             int ones, tens, hundreds, thousands = 0;
             thousands = (Number / 1000) % 10;
             hundreds = ((Number / 100) % 100) % 10;
             if (thousands != 0) {
                 playSound("herobrine.numbers." + thousands);
-                playSound("herobrine.misc.Thousand");
-                if (hundreds == 0) playSound("herobrine.misc.and");
+                playSound("herobrine.misc.thousand");
+                if (hundreds == 0) playSound("herobrine.trivial.and");
             }
             if (hundreds != 0) {
                 playSound("herobrine.numbers." + hundreds);
-                playSound("herobrine.misc.Hundred");
-                playSound("herobrine.misc.and");
+                playSound("herobrine.misc.hundred");
+                playSound("herobrine.trivial.and");
             }
             tens = (Number / 10) % 10;
             if (tens != 0) {
@@ -224,7 +229,7 @@ public class VoceProcessor extends Thread {
     public static boolean playSound(String path)
     {
         try {
-            SoundHandler.onEntityPlay(path, 1, 1);
+            SoundHandler.onEntityPlay(path, 1.5F, 1.5F);
         } catch(Exception e)
         {
             System.out.println(e.getMessage());

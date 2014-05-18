@@ -146,6 +146,13 @@
 	  "stream": false
     }]
   },
+  "herobrine.misc.thousand": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/thousand",
+	  "stream": false
+    }]
+  },
   "herobrine.misc.impressed": {
     "category": "player",
     "sounds": [{
@@ -440,10 +447,10 @@
 	  "stream": false
     }]
   },
-  "herobrine.weather.rainy": {
+  "herobrine.weather.1": {
     "category": "player",
     "sounds": [{
-      "name": "herobrine/weather/rainy",
+      "name": "herobrine/weather/1",
 	  "stream": false
     }]
   },
@@ -454,18 +461,19 @@
 	  "stream": false
     }]
   },
-  "herobrine.weather.stormy": {
+  "herobrine.weather.2": {
     "category": "player",
     "sounds": [{
-      "name": "herobrine/weather/stormy",
+      "name": "herobrine/weather/2",
 	  "stream": false
     }]
   },
-  "herobrine.weather.sunny": {
+  "herobrine.weather.0": {
     "category": "player",
     "sounds": [{
-      "name": "herobrine/weather/sunny",
+      "name": "herobrine/weather/0",
 	  "stream": false
+
     }]
   },
   "herobrine.weather.snowy": {
