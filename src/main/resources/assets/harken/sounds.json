@@ -426,10 +426,17 @@
 	  "stream": false
     }]
   },
+  "herobrine.misc.and": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/and",
+	  "stream": false
+    }]
+  },
   "herobrine.trivial.and": {
     "category": "player",
     "sounds": [{
-      "name": "herobrine/trivial/and",
+      "name": "herobrine/misc/and",
 	  "stream": false
     }]
   },
