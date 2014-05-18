@@ -208,10 +208,10 @@ public class VoceProcessor extends Thread {
                 playSound("herobrine.misc.and");
             }
             tens = (Number / 10) % 10;
-            ones = Number % 10;
             if (tens != 0) {
-                ones = Integer.parseInt(tens + "" + ones);
+                playSound("herobrine.numbers." + tens);
             }
+            ones = Number % 10;
             if (ones != 0) {
                 playSound("herobrine.numbers." + ones);
             }
