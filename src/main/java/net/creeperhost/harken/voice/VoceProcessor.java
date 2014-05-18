@@ -23,8 +23,11 @@ public class VoceProcessor extends Thread {
         _s = s;//Collect the text version of voice input into a variable the thread can access safely.
         _wearing = wearing;//If the user is wearing their glasses
     }
+
     public void run()
     {
+        if (MCInformation.isMainMenu()) return;
+
         //Grab basic movement initiator and send command onto correct function.
         if (_s.substring(0, 5).equals("steve")) {
             //Catch ALL the exceptions!
@@ -47,7 +50,6 @@ public class VoceProcessor extends Thread {
     public static KeyBinding keypress;
 
     public static Minecraft mc = Minecraft.getMinecraft();
-
     static Map<String, Integer> spkntoint = new HashMap<String, Integer>();
 
     static {
@@ -156,6 +158,7 @@ public class VoceProcessor extends Thread {
     }
     public synchronized void additionalControls(String command)
     {
+        System.out.println(MCInformation.canMineBlock());
         if(command.length() <= 7 || !command.contains(" ")) return; //Enough of recognizing just 'heroine', kthxbai
         String[] data = command.split(" ");
         command = command.replace(data[0],"");

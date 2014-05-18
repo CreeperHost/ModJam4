@@ -48,6 +48,8 @@ public class HarkenEvents {
 
         SoundHandler.soundTick();
 
+        MCInformation.gatherTick();
+
         //other stuff
     }
 
