@@ -10,7 +10,7 @@ import net.minecraft.world.chunk.Chunk;
  */
 public class MCInformation {
 
-    public enum WeatherType {SUNNY, PRECIPITATION, STORM}
+    public enum WeatherType {SUNNY, PRECIPITATION, STORM, SNOWY}
     public enum DimensionType {OVERWORLD, NETHER, END, OTHER}
     public static String biome;
 
