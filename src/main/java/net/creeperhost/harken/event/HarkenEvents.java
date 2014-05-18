@@ -6,6 +6,7 @@ import net.creeperhost.harken.Harken;
 import net.creeperhost.harken.handler.SoundHandler;
 import net.creeperhost.harken.item.ModItems;
 import net.creeperhost.harken.reference.ModInfo;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -18,7 +19,7 @@ public class HarkenEvents {
 			if (isWearingGlasses(event.entityPlayer)) {
 				if (actionWasRightClick(event.action)) {
 					Harken.logger.info("I right clicked while wearing glasses!");
-					SoundHandler.onEntityPlay("herobrine.insult.human", event.entityPlayer.getEntityWorld(), event.entityPlayer, 1, 1);
+					SoundHandler.onEntityPlay("herobrine.insult.human", 1, 1);
 				}
 			}
 		}
