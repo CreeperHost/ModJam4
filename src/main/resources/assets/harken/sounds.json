@@ -61,5 +61,403 @@
       "name": "herobrine/badjokes/4",
 	  "stream": false
     }]
+  },
+  "herobrine.death.1": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/death/1",
+	  "stream": false
+    }]
+  },
+  "herobrine.death.2": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/death/2",
+	  "stream": false
+    }]
+  },
+  "herobrine.death.3": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/death/3",
+	  "stream": false
+    }]
+  },
+  "herobrine.death.4": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/death/4",
+	  "stream": false
+    }]
+  },
+  "herobrine.death.5": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/death/5",
+	  "stream": false
+    }]
+  },
+  "herobrine.fail.1": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/fail/1",
+	  "stream": false
+    }]
+  },
+  "herobrine.fail.2": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/fail/2",
+	  "stream": false
+    }]
+  },
+  "herobrine.fail.3": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/fail/3",
+	  "stream": false
+    }]
+  },
+  "herobrine.fail.4": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/fail/4",
+	  "stream": false
+    }]
+  },
+  "herobrine.fail.5": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/fail/5",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.blocksaway": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/blocksaway",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.hundred": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/hundred",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.impressed": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/impressed",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.iscurrently": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/iscurrently",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.mildlaugh": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/mildlaugh",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.monstersnearby": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/monstersnearby",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.therearecurrently": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/therearecurrently",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.whywouldiwarnyou": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/whywouldiwarnyou",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.x": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/x",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.y": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/y",
+	  "stream": false
+    }]
+  },
+  "herobrine.misc.z": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/misc/z",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.1": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/1",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.2": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/2",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.3": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/3",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.4": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/4",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.5": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/5",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.6": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/6",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.7": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/7",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.8": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/8",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.9": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/9",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.10": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/10",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.11": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/11",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.12": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/12",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.13": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/13",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.14": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/14",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.15": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/15",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.16": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/16",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.17": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/17",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.18": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/18",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.19": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/19",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.20": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/20",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.30": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/30",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.40": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/40",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.50": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/50",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.60": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/60",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.70": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/70",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.80": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/80",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.90": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/90",
+	  "stream": false
+    }]
+  },
+  "herobrine.numbers.100": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/numbers/100",
+	  "stream": false
+    }]
+  },
+  "herobrine.sassy.letmegooglethatforyou": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/sassy/letmegooglethatforyou",
+	  "stream": false
+    }]
+  },
+  "herobrine.time.am": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/time/am",
+	  "stream": false
+    }]
+  },
+  "herobrine.time.pm": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/time/pm",
+	  "stream": false
+    }]
+  },
+  "herobrine.trivial.and": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/trivial/and",
+	  "stream": false
+    }]
+  },
+  "herobrine.weather.rainy": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/weather/rainy",
+	  "stream": false
+    }]
+  },
+  "herobrine.weather.sassy": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/weather/sassy",
+	  "stream": false
+    }]
+  },
+  "herobrine.weather.stormy": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/weather/stormy",
+	  "stream": false
+    }]
+  },
+  "herobrine.weather.sunny": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/weather/sunny",
+	  "stream": false
   }
 }
