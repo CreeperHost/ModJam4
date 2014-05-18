@@ -1,5 +1,6 @@
 package net.creeperhost.harken.MCBridge;
 
+import net.creeperhost.harken.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiMainMenu;
@@ -20,6 +21,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * Created by Acer on 18/05/2014.
  */
 public class MCInformation {
+
+    public static boolean steve = true;
+    public static boolean glasses = false;
 
     public enum WeatherType {SUNNY, PRECIPITATION, STORM, SNOWY}
     public enum DimensionType {OVERWORLD, NETHER, END, OTHER}
@@ -99,6 +103,8 @@ public class MCInformation {
         } else {
             isMenu = false;
         }
+
+        glasses = (player != null) && (player.getCurrentArmor(3) != null) && (player.getCurrentArmor(3).getItem() == ModItems.glasses);
     }
 
     private static boolean isMenu = true;

@@ -85,6 +85,7 @@ public class VoceProcessor extends Thread {
     public static int number_spoken_to_int(String number) { return spkntoint.containsKey(number) ? spkntoint.get(number) : 0; }
     public synchronized void coreControls(String command) throws AWTException
     {
+        if (!MCInformation.steve) return;
         //Movement and game controls
         //Input emulation, need to fetch Minecraft key bindings and adjust as required
         int length = 350;//Need to calculate length of time holding a key to pass 1 block
@@ -158,6 +159,7 @@ public class VoceProcessor extends Thread {
     }
     public synchronized void additionalControls(String command)
     {
+        if (!MCInformation.glasses) return;
         if(command.length() <= 7 || !command.contains(" ")) return; //Enough of recognizing just 'heroine', kthxbai
         String[] data = command.split(" ");
         command = command.replace(data[0],"");
