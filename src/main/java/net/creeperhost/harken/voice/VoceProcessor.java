@@ -23,8 +23,11 @@ public class VoceProcessor extends Thread {
         _s = s;//Collect the text version of voice input into a variable the thread can access safely.
         _wearing = wearing;//If the user is wearing their glasses
     }
+
     public void run()
     {
+        if (MCInformation.isMainMenu()) return;
+
         //Grab basic movement initiator and send command onto correct function.
         if (_s.substring(0, 5).equals("steve")) {
             //Catch ALL the exceptions!
@@ -47,7 +50,6 @@ public class VoceProcessor extends Thread {
     public static KeyBinding keypress;
 
     public static Minecraft mc = Minecraft.getMinecraft();
-
     static Map<String, Integer> spkntoint = new HashMap<String, Integer>();
 
     static {
@@ -169,7 +171,7 @@ public class VoceProcessor extends Thread {
             }
             return;
         }
-        if(command.contains("where am i")||command.contains("location")||command.contains("ordinates"))
+        else if(command.contains("where am i")||command.contains("location")||command.contains("ordinates"))
         {
             playSound("herobrine.misc.x");
             speakNumber(MCInformation.x);
@@ -179,6 +181,28 @@ public class VoceProcessor extends Thread {
             speakNumber(MCInformation.z);
             return;
         }
+        else if(command.contains("mine"))
+        {
+            playSound(MCInformation.canMineBlock() ? "herobrine.misc.youcanbreakthis" : "herobrine.misc.youcannotbreakthis");
+            return;
+        }
+        /*else if(command.contains("spawn"))
+        {
+            byte result = MCInformation.mobSpawnChance();
+            switch(result)
+            {
+                case 0:
+                    playSound("herobrine.lightlevel.unfortunatelytheyarestayingclear");
+                    break;
+                case 1:
+                    playSound("herobrine.lightlevel.wecanonlyhope");
+                    break;
+                default:
+                    playSound("herobrine.lightlevel.myminionsarecoming");
+                    break;
+            }
+            return;
+        }*/
         playSound("herobrine.fail."+randInt(1,5));
         //Jarvis like functions
     }
@@ -196,7 +220,7 @@ public class VoceProcessor extends Thread {
         try {
             if (Number < 0)
             {
-                playSound("herobrine.numbers.minus");
+                playSound("herobrine.misc.minus");
                 Number = -Number;
             }
             int ones, tens, hundreds, thousands = 0;
