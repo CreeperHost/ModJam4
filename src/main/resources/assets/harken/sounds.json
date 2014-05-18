@@ -460,5 +460,19 @@
       "name": "herobrine/weather/sunny",
 	  "stream": false
     }]
+  },
+  "herobrine.weather.sunny": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/weather/sunny",
+	  "stream": false
+    }]
+  },
+  "herobrine.weather.prefix": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/weather/prefix",
+	  "stream": false
+    }]
   }
 }
