@@ -33,5 +33,33 @@
       "name": "herobrine/insult/5",
 	  "stream": false
     }]
+  },
+  "herobrine.badjokes.1": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/badjokes/1",
+	  "stream": false
+    }]
+  },
+  "herobrine.badjokes.2": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/badjokes/2",
+	  "stream": false
+    }]
+  },
+  "herobrine.badjokes.3": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/badjokes/3",
+	  "stream": false
+    }]
+  },
+  "herobrine.badjokes.4": {
+    "category": "player",
+    "sounds": [{
+      "name": "herobrine/badjokes/4",
+	  "stream": false
+    }]
   }
 }
