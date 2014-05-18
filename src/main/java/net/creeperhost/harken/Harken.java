@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.relauncher.Side;
 import net.creeperhost.harken.event.HarkenEvents;
 import net.creeperhost.harken.item.ModItems;
 import net.creeperhost.harken.reference.ModInfo;
@@ -24,6 +25,13 @@ public class Harken {
     @EventHandler
     @SuppressWarnings("unused")
     public void preinit(FMLPreInitializationEvent event) {
+
+        if (event.getSide() == Side.SERVER)
+        {
+            logger.info("Attempted to load on server. Aborting!");
+            throw new RuntimeException("You are attempting to load Harken on the server. This will not work! Please remove the mod from your mods folder.");
+        }
+
         try {
             Class.forName("voce.Utils");//Let's see if we have our libraries, hopefully gradle has this shit covered :D
         } catch( ClassNotFoundException e ) {
