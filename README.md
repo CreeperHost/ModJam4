@@ -1,10 +1,12 @@
 #Harken by CreeperHost
-(Paul_T, Cloudhunter, Hanse00, Luke_H)
-For Minecraft Forge 10.12.1.1060 and Minecraft 1.7.2
+* (Paul_T, Cloudhunter, Hanse00, Luke_H)
+* For Minecraft Forge 10.12.1.1060 and Minecraft 1.7.2
 
 ##Features
 * Super awesome glasses.
 * IMP (In Mod Purchases), get your glasses for a one time payment of $999
+* Basic voice controls for gamers who cannot use standard controls
+* Advanced functions for use with in game item
 
 ##Download
 [Builds](http://www.creeperrepo.net/ci/ModJam4-CreeperHost/)
