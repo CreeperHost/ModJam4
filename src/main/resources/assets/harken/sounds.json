@@ -1,32 +1,37 @@
 {
   "herobrine.insult.1": {
     "category": "player",
-    "sounds": [
-      "herobrine/insult/1"
-    ]
-  }
+    "sounds": [{
+      "name": "herobrine/insult/1",
+	  "stream": false
+    }]
+  },
   "herobrine.insult.2": {
     "category": "player",
-    "sounds": [
-      "herobrine/insult/2"
-    ]
-  }
+    "sounds": [{
+      "name": "herobrine/insult/2",
+	  "stream": false
+    }]
+  },
   "herobrine.insult.3": {
     "category": "player",
-    "sounds": [
-      "herobrine/insult/3"
-    ]
-  }
+    "sounds": [{
+      "name": "herobrine/insult/3",
+	  "stream": false
+    }]
+  },
   "herobrine.insult.4": {
     "category": "player",
-    "sounds": [
-      "herobrine/insult/4"
-    ]
-  }
+    "sounds": [{
+      "name": "herobrine/insult/4",
+	  "stream": false
+    }]
+  },
   "herobrine.insult.5": {
     "category": "player",
-    "sounds": [
-      "herobrine/insult/5"
-    ]
+    "sounds": [{
+      "name": "herobrine/insult/5",
+	  "stream": false
+    }]
   }
 }

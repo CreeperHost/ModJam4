@@ -24,7 +24,7 @@ public class HarkenEvents {
 			if (isWearingGlasses(event.entityPlayer)) {
 				if (actionWasRightClick(event.action)) {
 					Harken.logger.info("I right clicked while wearing glasses!");
-					SoundHandler.onEntityPlay("herobrine.insult.human", 1, 1);
+					SoundHandler.onEntityPlay("herobrine.insult.1", 1, 1);
 				}
 			}
 		}
@@ -45,6 +45,8 @@ public class HarkenEvents {
         }
 
         if (tickCount == Integer.MAX_VALUE || tickCount < 0) tickCount = 0;
+
+        SoundHandler.soundTick();
 
         //other stuff
     }
