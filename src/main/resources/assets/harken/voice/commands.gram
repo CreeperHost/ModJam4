@@ -17,6 +17,6 @@ public <use> = <voicecommand> use;
 <turn> = <voicecommand> turn;
 public <turnDir> = <turn> (left | right | round);
 
-<additionalcommand> = hero brine | heroine;
+<additionalcommand> = hero brine | heroine | hero bream;
 public <weather> = <additionalcommand> what is the weather [like] [today | now];
-public <location> = <additionalcommand> where am i
+public <location> = <additionalcommand> (where am i | what (is | are) my (location | [co] ordinates)

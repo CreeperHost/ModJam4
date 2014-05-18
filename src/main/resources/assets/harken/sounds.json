@@ -461,10 +461,10 @@
 	  "stream": false
     }]
   },
-  "herobrine.weather.sunny": {
+  "herobrine.weather.snowy": {
     "category": "player",
     "sounds": [{
-      "name": "herobrine/weather/sunny",
+      "name": "herobrine/weather/snowy",
 	  "stream": false
     }]
   },

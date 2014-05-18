@@ -39,7 +39,7 @@ public class VoceProcessor extends Thread {
         }
         if(!_wearing) return;
         //Advanced commands outside base requirements, usable only with glasses
-        if (((_s.length() >= 7) && _s.substring(0, 7).equals("heroine")) || ((_s.length() >= 9) && _s.substring(0, 9).equals("hero brine"))) {
+        if (((_s.length() >= 7) && _s.substring(0, 7).equals("heroine")) || ((_s.length() >= 9) && _s.substring(0, 9).equals("hero brine")) || ((_s.length() >= 9) && _s.substring(0, 9).equals("hero bream"))) {
             additionalControls(_s);
             return;
         }
@@ -169,7 +169,7 @@ public class VoceProcessor extends Thread {
             }
             return;
         }
-        if(command.contains("where am i"))
+        if(command.contains("where am i")||command.contains("location")||command.contains("ordinates"))
         {
             playSound("herobrine.misc.X");
             speakNumber(MCInformation.x);
