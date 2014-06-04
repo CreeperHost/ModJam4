@@ -90,6 +90,7 @@ public class VoceProcessor extends Thread {
         //Input emulation, need to fetch Minecraft key bindings and adjust as required
         int length = 350;//Need to calculate length of time holding a key to pass 1 block
         int number = 0;
+
         String[] data = command.split(" ");
         number = number_spoken_to_int(data[(data.length-1)]);
         keypress = mc.gameSettings.keyBindForward;
@@ -102,7 +103,7 @@ public class VoceProcessor extends Thread {
         else if (command.contains("right")) {
             keypress = mc.gameSettings.keyBindRight;
         }
-        else if(command.contains("mine"))
+        else if(command.contains("mine") || command.contains("mining"))
         {
             keypress = mc.gameSettings.keyBindAttack;
         }
@@ -129,7 +130,8 @@ public class VoceProcessor extends Thread {
                 simulator.keyRelease(KeyEvent.VK_ESCAPE);
             }
         }
-        else if(command.contains("walk") || command.contains("mine")) {
+
+        if(command.contains("walk") || command.contains("mine") || command.contains("mining")) {
             try {
                 if(number >= 1) { // If you've asked for "a little" or "a bit" or "one"
                     KeyBinding.setKeyBindState(keypress.getKeyCode(), true);

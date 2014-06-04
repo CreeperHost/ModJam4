@@ -83,8 +83,7 @@ public class VoceInterface {
 
                                 }
                                 continue;
-                            }
-                            if (s.contains("turn")) {
+                            } else if (s.contains("turn")) {
                                 try {
                                     int turnTime = 2000;
                                     int time = 0;
@@ -94,12 +93,25 @@ public class VoceInterface {
                                         time = time + 50;
                                         Thread.sleep(10);
                                         Minecraft.getMinecraft().thePlayer.setAngles(changeAmountIncremental, 0);
-
                                     }
                                 } catch (Exception e) {
 
                                 }
                             continue;
+                            } else if (s.contains("look")) {
+                                try {
+                                    int turnTime = 2000;
+                                    int time = 0;
+                                    int changeAmount = (s.contains("down") ? -315 : (s.contains("up") ? 315 : 0));
+                                    int changeAmountIncremental = changeAmount / (turnTime / 50);
+                                    while (time < turnTime) {
+                                        time = time + 50;
+                                        Thread.sleep(10);
+                                        Minecraft.getMinecraft().thePlayer.setAngles(0, changeAmountIncremental);
+                                    }
+                                } catch (Exception e) {
+
+                                }
                             }
                         }
                         if(commandprocessor != null && commandprocessor.isAlive()) continue; //We probably shouldn't try and create a new VoceProcesor if the previous one is still running...

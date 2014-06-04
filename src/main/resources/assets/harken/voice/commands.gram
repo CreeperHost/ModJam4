@@ -12,10 +12,12 @@ public <jumpDir> = <voicecommand> jump;
 public <menu> = <voicecommand> (open | close) [the] menu;
 public <tools> = <voicecommand> select (one | two | three | four | five | six | seven | eight | nine);
 public <stop> = <voicecommand> stop [it | everything];
-public <mine> = <voicecommand> mine [(five | ten | fifteen)];
+public <mine> = <voicecommand> [start] (mine | mining) [(five | ten | fifteen)];
 public <use> = <voicecommand> use;
 <turn> = <voicecommand> turn;
 public <turnDir> = <turn> (left | right | round);
+<look> = <voicecommand> look;
+public <lookDir> = <look> (up | down);
 
 <additionalcommand> = hero brine | heroine | hero bream;
 public <weather> = <additionalcommand> what is the weather [like] [today | now];

@@ -145,7 +145,7 @@ public class SpeechRecognizer implements Runnable
                 {
                     result = mRecognizer.recognize();
                 } catch (Throwable t) {}
-                
+
                 if (result != null)
                 {
                     String s = result.getBestFinalResultNoFiller();
