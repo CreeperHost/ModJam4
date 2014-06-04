@@ -4,7 +4,6 @@
 
 ##Features
 * Super awesome glasses.
-* IMP (In Mod Purchases), get your glasses for a one time payment of $999
 * Basic voice controls for gamers who cannot use standard controls
 * Advanced functions for use with in game item
 
